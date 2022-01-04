@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<organization:Organization xmlns:organization="http://documentation.bonitasoft.com/organization-xml-schema/1.1" name="ServiceBiddingOrganization">
+  <customUserInfoDefinitions/>
+  <users>
+    <user userName="unregistered">
+      <firstName>Unregistered</firstName>
+      <lastName>User</lastName>
+      <personalData/>
+      <professionalData/>
+      <password encrypted="false">unregistered</password>
+      <customUserInfoValues/>
+    </user>
+    <user userName="admin">
+      <firstName>Admin</firstName>
+      <lastName>Admin</lastName>
+      <personalData/>
+      <professionalData/>
+      <password encrypted="false">admin</password>
+      <customUserInfoValues/>
+    </user>
+  </users>
+  <roles>
+    <role name="member">
+      <displayName>Member</displayName>
+    </role>
+    <role name="manager">
+      <displayName>Manager</displayName>
+    </role>
+  </roles>
+  <groups>
+    <group name="ServiceBidding">
+      <displayName>ServiceBidding</displayName>
+    </group>
+    <group name="Customers" parentPath="/ServiceBidding">
+      <displayName>Customers</displayName>
+    </group>
+    <group name="Suppliers" parentPath="/ServiceBidding">
+      <displayName>Suppliers</displayName>
+    </group>
+    <group name="Guests" parentPath="/ServiceBidding">
+      <displayName>Guests</displayName>
+    </group>
+    <group name="Admins" parentPath="/ServiceBidding">
+      <displayName>Admins</displayName>
+    </group>
+  </groups>
+  <memberships>
+    <membership>
+      <userName>unregistered</userName>
+      <roleName>member</roleName>
+      <groupName>Guests</groupName>
+      <groupParentPath>/ServiceBidding</groupParentPath>
+    </membership>
+    <membership>
+      <userName>admin</userName>
+      <roleName>manager</roleName>
+      <groupName>Admins</groupName>
+      <groupParentPath>/ServiceBidding</groupParentPath>
+    </membership>
+  </memberships>
+</organization:Organization>
