@@ -9,5 +9,14 @@
             <queries/>
             <indexes/>
         </businessObject>
+        <businessObject qualifiedName="rs.ac.uns.ftn.model.ServiceCategoryOffer">
+            <fields>
+                <field type="LONG" length="255" name="userId" nullable="false" collection="false"/>
+                <relationField type="AGGREGATION" reference="rs.ac.uns.ftn.model.ServiceCategory" fetchType="LAZY" name="serviceCategories" nullable="true" collection="true"/>
+            </fields>
+            <uniqueConstraints/>
+            <queries/>
+            <indexes/>
+        </businessObject>
     </businessObjects>
 </businessObjectModel>
