@@ -12,7 +12,32 @@
         <businessObject qualifiedName="rs.ac.uns.ftn.model.ServiceCategoryOffer">
             <fields>
                 <field type="LONG" length="255" name="userId" nullable="false" collection="false"/>
-                <relationField type="AGGREGATION" reference="rs.ac.uns.ftn.model.ServiceCategory" fetchType="LAZY" name="serviceCategories" nullable="true" collection="true"/>
+                <relationField type="AGGREGATION" reference="rs.ac.uns.ftn.model.ServiceCategory" fetchType="EAGER" name="serviceCategories" nullable="true" collection="true"/>
+            </fields>
+            <uniqueConstraints/>
+            <queries/>
+            <indexes/>
+        </businessObject>
+        <businessObject qualifiedName="rs.ac.uns.ftn.model.ServiceQuery">
+            <fields>
+                <relationField type="AGGREGATION" reference="rs.ac.uns.ftn.model.ServiceCategory" fetchType="EAGER" name="serviceCategory" nullable="true" collection="true"/>
+                <field type="STRING" length="255" name="jobDescription" nullable="false" collection="false"/>
+                <field type="DOUBLE" length="255" name="maxPossiblePayout" nullable="false" collection="false"/>
+                <field type="LOCALDATE" length="255" name="offerValidUntil" nullable="false" collection="false"/>
+                <field type="LOCALDATE" length="255" name="jobDeadline" nullable="false" collection="false"/>
+                <field type="INTEGER" length="255" name="maxOffers" nullable="false" collection="false"/>
+                <relationField type="AGGREGATION" reference="rs.ac.uns.ftn.model.ServiceQueryBid" fetchType="LAZY" name="bids" nullable="true" collection="true"/>
+            </fields>
+            <uniqueConstraints/>
+            <queries/>
+            <indexes/>
+        </businessObject>
+        <businessObject qualifiedName="rs.ac.uns.ftn.model.ServiceQueryBid">
+            <fields>
+                <relationField type="AGGREGATION" reference="rs.ac.uns.ftn.model.ServiceQuery" fetchType="LAZY" name="serviceQuery" nullable="false" collection="false"/>
+                <field type="DOUBLE" length="255" name="price" nullable="false" collection="false"/>
+                <field type="LOCALDATE" length="255" name="jobDeadline" nullable="false" collection="false"/>
+                <field type="BOOLEAN" length="255" name="isChosen" nullable="true" collection="false"/>
             </fields>
             <uniqueConstraints/>
             <queries/>

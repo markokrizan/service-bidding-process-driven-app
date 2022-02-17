@@ -11,11 +11,19 @@
       <customUserInfoValues/>
     </user>
     <user userName="admin">
-      <firstName>Admin</firstName>
+      <firstName>Primary</firstName>
       <lastName>Admin</lastName>
       <personalData/>
       <professionalData/>
       <password encrypted="false">admin</password>
+      <customUserInfoValues/>
+    </user>
+    <user userName="adminb">
+      <firstName>Seconday</firstName>
+      <lastName>Admin</lastName>
+      <personalData/>
+      <professionalData/>
+      <password encrypted="false">adminb</password>
       <customUserInfoValues/>
     </user>
   </users>
@@ -53,6 +61,12 @@
     </membership>
     <membership>
       <userName>admin</userName>
+      <roleName>manager</roleName>
+      <groupName>Admins</groupName>
+      <groupParentPath>/ServiceBidding</groupParentPath>
+    </membership>
+    <membership>
+      <userName>adminb</userName>
       <roleName>manager</roleName>
       <groupName>Admins</groupName>
       <groupParentPath>/ServiceBidding</groupParentPath>
