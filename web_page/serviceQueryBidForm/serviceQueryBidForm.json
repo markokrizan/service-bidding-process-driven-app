@@ -2,7 +2,7 @@
   "modelVersion" : "2.2",
   "id" : "serviceQueryBidForm",
   "name" : "serviceQueryBidForm",
-  "lastUpdate" : 1645033255975,
+  "lastUpdate" : 1645184106752,
   "rows" : [
     [
       {
@@ -179,7 +179,8 @@
                 },
                 "propertyValues" : {
                   "repeatedCollection" : {
-                    "type" : "variable"
+                    "type" : "variable",
+                    "value" : ""
                   },
                   "hidden" : {
                     "type" : "constant",
@@ -200,47 +201,6 @@
                 "rows" : [
                   [
                     {
-                      "type" : "component",
-                      "dimension" : {
-                        "md" : 12,
-                        "sm" : 12,
-                        "xs" : 12,
-                        "lg" : 12
-                      },
-                      "propertyValues" : {
-                        "hidden" : {
-                          "type" : "constant",
-                          "value" : false
-                        },
-                        "level" : {
-                          "type" : "constant",
-                          "value" : "Level 4"
-                        },
-                        "cssClasses" : {
-                          "type" : "constant",
-                          "value" : ""
-                        },
-                        "text" : {
-                          "type" : "interpolation",
-                          "value" : "Service Query"
-                        },
-                        "alignment" : {
-                          "type" : "constant",
-                          "value" : "left"
-                        },
-                        "dimension" : {
-                          "type" : "constant",
-                          "value" : 12
-                        }
-                      },
-                      "reference" : "ae8e1c9e-f3ea-4220-a6e5-cec0324302d6",
-                      "hasValidationError" : false,
-                      "id" : "pbTitle",
-                      "description" : ""
-                    }
-                  ],
-                  [
-                    {
                       "type" : "container",
                       "dimension" : {
                         "md" : 12,
@@ -250,11 +210,12 @@
                       },
                       "propertyValues" : {
                         "repeatedCollection" : {
-                          "type" : "variable"
+                          "type" : "variable",
+                          "value" : ""
                         },
                         "hidden" : {
                           "type" : "constant",
-                          "value" : false
+                          "value" : true
                         },
                         "cssClasses" : {
                           "type" : "constant",
@@ -664,6 +625,18 @@
                               "dimension" : {
                                 "type" : "constant",
                                 "value" : 12
+                              },
+                              "labelPosition" : {
+                                "type" : "constant",
+                                "value" : "top"
+                              },
+                              "labelWidth" : {
+                                "type" : "constant",
+                                "value" : 4
+                              },
+                              "allowHTML" : {
+                                "type" : "constant",
+                                "value" : true
                               }
                             },
                             "reference" : "1f8c8814-b750-41c0-bc29-efad20e67971",
@@ -722,6 +695,58 @@
                           }
                         ]
                       ]
+                    }
+                  ],
+                  [
+                    {
+                      "type" : "component",
+                      "dimension" : {
+                        "xs" : 12,
+                        "sm" : 12,
+                        "md" : 12,
+                        "lg" : 12
+                      },
+                      "propertyValues" : {
+                        "cssClasses" : {
+                          "type" : "constant",
+                          "value" : ""
+                        },
+                        "hidden" : {
+                          "type" : "constant",
+                          "value" : false
+                        },
+                        "labelHidden" : {
+                          "type" : "constant",
+                          "value" : true
+                        },
+                        "label" : {
+                          "type" : "interpolation",
+                          "value" : "Default label"
+                        },
+                        "labelPosition" : {
+                          "type" : "constant",
+                          "value" : "top"
+                        },
+                        "labelWidth" : {
+                          "type" : "constant",
+                          "value" : 4
+                        },
+                        "allowHTML" : {
+                          "type" : "constant",
+                          "value" : true
+                        },
+                        "text" : {
+                          "type" : "interpolation",
+                          "value" : "Request: {{currentServiceQuery.jobDescription}}"
+                        },
+                        "alignment" : {
+                          "type" : "constant",
+                          "value" : "left"
+                        }
+                      },
+                      "reference" : "a2135914-8e30-467a-94ce-5cfc219a0756",
+                      "hasValidationError" : false,
+                      "id" : "pbText"
                     }
                   ],
                   [
@@ -1054,7 +1079,7 @@
         "return {",
         "\tserviceQueryBidInput: {",
         "\t\tserviceQuery: {",
-        "\t\t\tpersistenceId_string: $data.context.serviceQuery_ref.storageId_string",
+        "\t\t\tpersistenceId_string: $data.context && $data.context.serviceQuery_ref && $data.context.serviceQuery_ref.storageId_string",
         "\t\t},",
         "\t\tprice: $data.serviceQueryBid.price !== undefined ? $data.serviceQueryBid.price : null,",
         "\t\tjobDeadline: $data.serviceQueryBid.jobDeadline !== undefined ? $data.serviceQueryBid.jobDeadline : null",
@@ -1109,8 +1134,16 @@
     "currentServiceQueryId" : {
       "type" : "expression",
       "value" : [
-        "return $data.context.serviceQuery_ref.storageId_string;"
+        "return $data.context && $data.context.serviceQuery_ref && $data.context.serviceQuery_ref.storageId_string;"
       ],
+      "exposed" : false
+    },
+    "currentServiceQuery" : {
+      "type" : "url",
+      "value" : [
+        "../API/bdm/businessData/rs.ac.uns.ftn.model.ServiceQuery/{{currentServiceQueryId}}"
+      ],
+      "advancedOptions" : { },
       "exposed" : false
     }
   },

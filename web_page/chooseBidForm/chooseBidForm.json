@@ -2,7 +2,7 @@
   "modelVersion" : "2.2",
   "id" : "chooseBidForm",
   "name" : "chooseBidForm",
-  "lastUpdate" : 1645125840285,
+  "lastUpdate" : 1645184124452,
   "rows" : [
     [
       {
@@ -11,7 +11,7 @@
           "xs" : 12
         },
         "propertyValues" : { },
-        "reference" : "50a12cb6-1207-4516-b702-c2fbeba7e531",
+        "reference" : "0019125b-369c-4698-9806-539c8e4c5fc1",
         "hasValidationError" : false,
         "id" : "pbContainer",
         "rows" : [
@@ -50,7 +50,7 @@
                   "value" : 12
                 }
               },
-              "reference" : "32bcebe9-677d-4289-9ba3-75c6cc3cd56e",
+              "reference" : "256c1a20-0813-44c9-ac6b-bd1d3806de20",
               "hasValidationError" : false,
               "id" : "pbTitle",
               "description" : ""
@@ -98,7 +98,7 @@
                   "value" : 12
                 }
               },
-              "reference" : "63cf122a-4257-4d7c-a373-e94cbc587196",
+              "reference" : "ae9d1f23-fc1e-40b1-8b28-85be61f7e56f",
               "hasValidationError" : false,
               "id" : "pbText",
               "description" : ""
@@ -109,12 +109,132 @@
     ],
     [
       {
+        "type" : "component",
+        "dimension" : {
+          "xs" : 12,
+          "sm" : 12,
+          "md" : 12,
+          "lg" : 12
+        },
+        "propertyValues" : {
+          "cssClasses" : {
+            "type" : "constant",
+            "value" : ""
+          },
+          "hidden" : {
+            "type" : "constant",
+            "value" : false
+          },
+          "labelHidden" : {
+            "type" : "constant",
+            "value" : true
+          },
+          "label" : {
+            "type" : "interpolation",
+            "value" : "Default label"
+          },
+          "labelPosition" : {
+            "type" : "constant",
+            "value" : "top"
+          },
+          "labelWidth" : {
+            "type" : "constant",
+            "value" : 4
+          },
+          "allowHTML" : {
+            "type" : "constant",
+            "value" : true
+          },
+          "text" : {
+            "type" : "interpolation",
+            "value" : "Request: {{serviceQuery.jobDescription}}"
+          },
+          "alignment" : {
+            "type" : "constant",
+            "value" : "left"
+          }
+        },
+        "reference" : "6d9665d6-847b-4a1b-90fd-f431f91b3c21",
+        "hasValidationError" : false,
+        "id" : "pbText"
+      }
+    ],
+    [
+      {
+        "type" : "component",
+        "dimension" : {
+          "xs" : 12,
+          "sm" : 12,
+          "md" : 12,
+          "lg" : 12
+        },
+        "propertyValues" : {
+          "cssClasses" : {
+            "type" : "constant",
+            "value" : ""
+          },
+          "hidden" : {
+            "type" : "constant",
+            "value" : false
+          },
+          "disabled" : {
+            "type" : "constant",
+            "value" : false
+          },
+          "required" : {
+            "type" : "constant",
+            "value" : false
+          },
+          "labelHidden" : {
+            "type" : "constant",
+            "value" : false
+          },
+          "label" : {
+            "type" : "interpolation",
+            "value" : "Select"
+          },
+          "labelPosition" : {
+            "type" : "constant",
+            "value" : "top"
+          },
+          "labelWidth" : {
+            "type" : "constant",
+            "value" : 4
+          },
+          "placeholder" : {
+            "type" : "interpolation",
+            "value" : "Select an option"
+          },
+          "availableValues" : {
+            "type" : "expression",
+            "value" : "serviceQueryBidOptions"
+          },
+          "displayedKey" : {
+            "type" : "constant",
+            "value" : "label"
+          },
+          "returnedKey" : {
+            "type" : "constant",
+            "value" : "id"
+          },
+          "value" : {
+            "type" : "variable",
+            "value" : "formInput.chosenBid"
+          }
+        },
+        "reference" : "5e84b643-8a0d-4579-aa0e-d175bff4ebbc",
+        "hasValidationError" : false,
+        "id" : "pbSelect"
+      }
+    ],
+    [
+      {
         "type" : "formContainer",
         "dimension" : {
           "xs" : 12
         },
         "propertyValues" : { },
-        "reference" : "56084cb8-8609-4c81-a746-c51dd1c0f527",
+        "reference" : "12699633-31a9-47a9-8f45-36775714b311",
         "hasValidationError" : false,
         "id" : "pbFormContainer",
         "container" : {
@@ -123,7 +243,7 @@
             "xs" : 12
           },
           "propertyValues" : { },
-          "reference" : "ba794034-98b4-4fc0-b236-b2aaa63a4189",
+          "reference" : "ed16987d-9c93-420c-80d9-77288bc3ab00",
           "hasValidationError" : false,
           "id" : "pbContainer",
           "rows" : [
@@ -198,7 +318,7 @@
                     "value" : 12
                   }
                 },
-                "reference" : "eb0e4dd9-06e7-4790-ba8b-282cdcf402d1",
+                "reference" : "7a8d1351-2477-4563-85bd-12fd94e468f8",
                 "hasValidationError" : false,
                 "id" : "pbButton",
                 "description" : ""
@@ -250,7 +370,7 @@
                     "value" : 12
                   }
                 },
-                "reference" : "82fec4fe-34b7-4bfb-a74b-13c323e9ed2b",
+                "reference" : "d4142769-d948-4bdf-80eb-50ec67bd1d9b",
                 "hasValidationError" : false,
                 "id" : "pbText",
                 "description" : ""
@@ -263,16 +383,16 @@
   ],
   "assets" : [
     {
-      "id" : "c6d9aab5-5c7b-4f9d-b496-ab538417ac19",
-      "name" : "localization.json",
-      "type" : "json",
+      "id" : "a83fca52-d09c-4340-ad0c-7f5b5d46094f",
+      "name" : "style.css",
+      "type" : "css",
       "order" : 0,
       "external" : false
     },
     {
-      "id" : "fc17b982-b645-4fd8-b472-263a5247219b",
-      "name" : "style.css",
-      "type" : "css",
+      "id" : "31e06654-3366-483a-ac75-f2352cbb841d",
+      "name" : "localization.json",
+      "type" : "json",
       "order" : 0,
       "external" : false
     }
@@ -305,7 +425,7 @@
       "type" : "expression",
       "value" : [
         "return {",
-        "",
+        "    chosenBid: $data.formInput.chosenBid",
         "}"
       ],
       "exposed" : false
@@ -324,24 +444,51 @@
       ],
       "exposed" : false
     },
-    "queryBids" : {
+    "bids" : {
       "type" : "url",
       "value" : [
-        "../API/bdm/businessData/rs.ac.uns.ftn.model.ServiceQuery/{{queryId}}/bids"
+        "../API/bdm/businessData/rs.ac.uns.ftn.model.ServiceQuery/{{serviceQueryId}}/bids"
       ],
       "advancedOptions" : { },
       "exposed" : false
     },
-    "queryId" : {
-      "type" : "constant",
+    "serviceQueryId" : {
+      "type" : "expression",
       "value" : [
-        "123"
+        "return $data.context && $data.context.serviceQuery_ref && $data.context.serviceQuery_ref.storageId_string"
+      ],
+      "exposed" : false
+    },
+    "serviceQuery" : {
+      "type" : "url",
+      "value" : [
+        "../API/bdm/businessData/rs.ac.uns.ftn.model.ServiceQuery/{{serviceQueryId}}"
+      ],
+      "advancedOptions" : { },
+      "exposed" : false
+    },
+    "serviceQueryBidOptions" : {
+      "type" : "expression",
+      "value" : [
+        "return $data.bids ? $data.bids.map(function (bid) {",
+        "   return {",
+        "       id: bid.persistenceId_string,",
+        "       label: \"Deadline: \" + bid.jobDeadline + \" | price: \" + bid.price ",
+        "   } ",
+        "}) : [];"
+      ],
+      "exposed" : false
+    },
+    "formInput" : {
+      "type" : "json",
+      "value" : [
+        "{ \"chosenBid\": null }"
       ],
       "exposed" : false
     }
   },
   "hasValidationError" : false,
-  "uuid" : "2dcb1a37-4cba-4db9-a96a-9c680d0ef2d3",
+  "uuid" : "11dbce53-6b97-4417-80be-31db4c4a7ff6",
   "type" : "form",
   "description" : "Page generated with Bonita UI designer"
 }

@@ -34,7 +34,7 @@
         </businessObject>
         <businessObject qualifiedName="rs.ac.uns.ftn.model.ServiceQueryBid">
             <fields>
-                <relationField type="AGGREGATION" reference="rs.ac.uns.ftn.model.ServiceQuery" fetchType="LAZY" name="serviceQuery" nullable="false" collection="false"/>
+                <relationField type="AGGREGATION" reference="rs.ac.uns.ftn.model.ServiceQuery" fetchType="EAGER" name="serviceQuery" nullable="false" collection="false"/>
                 <field type="DOUBLE" length="255" name="price" nullable="false" collection="false"/>
                 <field type="LOCALDATE" length="255" name="jobDeadline" nullable="false" collection="false"/>
                 <field type="BOOLEAN" length="255" name="isChosen" nullable="true" collection="false"/>

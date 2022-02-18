@@ -26,6 +26,14 @@
       <password encrypted="false">adminb</password>
       <customUserInfoValues/>
     </user>
+    <user userName="customer1">
+      <firstName>Customer</firstName>
+      <lastName>1</lastName>
+      <personalData/>
+      <professionalData/>
+      <password encrypted="false">customer1</password>
+      <customUserInfoValues/>
+    </user>
   </users>
   <roles>
     <role name="member">
@@ -69,6 +77,12 @@
       <userName>adminb</userName>
       <roleName>manager</roleName>
       <groupName>Admins</groupName>
+      <groupParentPath>/ServiceBidding</groupParentPath>
+    </membership>
+    <membership>
+      <userName>customer1</userName>
+      <roleName>member</roleName>
+      <groupName>Customers</groupName>
       <groupParentPath>/ServiceBidding</groupParentPath>
     </membership>
   </memberships>
