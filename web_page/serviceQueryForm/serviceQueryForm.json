@@ -2,7 +2,7 @@
   "modelVersion" : "2.2",
   "id" : "serviceQueryForm",
   "name" : "serviceQueryForm",
-  "lastUpdate" : 1644998579048,
+  "lastUpdate" : 1645281228361,
   "rows" : [
     [
       {
@@ -371,8 +371,8 @@
                           "value" : "{\n  \"persistenceId_string\" : \"\"\n}"
                         },
                         "disabled" : {
-                          "type" : "constant",
-                          "value" : false
+                          "type" : "expression",
+                          "value" : "formInput.serviceQueryInput.serviceCategory.length >= 3"
                         },
                         "alignment" : {
                           "type" : "constant",
@@ -381,6 +381,30 @@
                         "dimension" : {
                           "type" : "constant",
                           "value" : 12
+                        },
+                        "assign" : {
+                          "type" : "constant",
+                          "value" : false
+                        },
+                        "url" : {
+                          "type" : "interpolation"
+                        },
+                        "responseStatusCode" : {
+                          "type" : "variable"
+                        },
+                        "dataFromSuccess" : {
+                          "type" : "variable"
+                        },
+                        "closeOnSuccess" : {
+                          "type" : "constant",
+                          "value" : false
+                        },
+                        "dataFromError" : {
+                          "type" : "variable"
+                        },
+                        "modalId" : {
+                          "type" : "constant",
+                          "value" : ""
                         }
                       },
                       "reference" : "2ce91b4a-5d4b-4d48-9744-555d5b060115",
@@ -805,6 +829,29 @@
                   "dimension" : {
                     "type" : "constant",
                     "value" : 12
+                  },
+                  "assign" : {
+                    "type" : "constant",
+                    "value" : false
+                  },
+                  "url" : {
+                    "type" : "interpolation"
+                  },
+                  "responseStatusCode" : {
+                    "type" : "variable",
+                    "value" : ""
+                  },
+                  "dataFromSuccess" : {
+                    "type" : "variable",
+                    "value" : ""
+                  },
+                  "closeOnSuccess" : {
+                    "type" : "constant",
+                    "value" : false
+                  },
+                  "modalId" : {
+                    "type" : "constant",
+                    "value" : ""
                   }
                 },
                 "reference" : "60f8fdb9-a46e-49f3-b200-1a268704bab8",
