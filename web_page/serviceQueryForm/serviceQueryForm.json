@@ -2,7 +2,7 @@
   "modelVersion" : "2.2",
   "id" : "serviceQueryForm",
   "name" : "serviceQueryForm",
-  "lastUpdate" : 1645281228361,
+  "lastUpdate" : 1645378577387,
   "rows" : [
     [
       {
@@ -11,7 +11,7 @@
           "xs" : 12
         },
         "propertyValues" : { },
-        "reference" : "47c88038-b638-4ea7-b3fe-57cdfd303bcc",
+        "reference" : "8553c1ac-c16c-4920-93eb-4d3416a1bdd2",
         "hasValidationError" : false,
         "id" : "pbFormContainer",
         "container" : {
@@ -20,7 +20,7 @@
             "xs" : 12
           },
           "propertyValues" : { },
-          "reference" : "7bd3bcb6-9b88-4fc9-a060-cfe98e4b0cb8",
+          "reference" : "b41a2749-02f6-43a5-a98b-d66f7976d3b9",
           "hasValidationError" : false,
           "id" : "pbContainer",
           "rows" : [
@@ -59,7 +59,7 @@
                     "value" : 12
                   }
                 },
-                "reference" : "5bd52672-9fbe-43ca-8647-6f6af5ff2cdf",
+                "reference" : "0d3bc7da-1719-4d27-ab61-9152bdc82779",
                 "hasValidationError" : false,
                 "id" : "pbTitle",
                 "description" : ""
@@ -91,7 +91,7 @@
                     "value" : 12
                   }
                 },
-                "reference" : "6456fab9-3bbf-40e5-91a2-36125d505dd4",
+                "reference" : "efcef73f-2d53-4b3f-aeba-f7d26569cdb6",
                 "hasValidationError" : false,
                 "id" : "pbContainer",
                 "rows" : [
@@ -130,7 +130,7 @@
                           "value" : 12
                         }
                       },
-                      "reference" : "9a8ac23f-70db-4975-84aa-7b588ef4aa63",
+                      "reference" : "b4184107-49d2-4fd5-8b67-c5cf9248294b",
                       "hasValidationError" : false,
                       "id" : "pbTitle",
                       "description" : ""
@@ -163,7 +163,7 @@
                           "value" : 12
                         }
                       },
-                      "reference" : "f77c9b54-a3e8-4426-9c34-f9a1413083b2",
+                      "reference" : "85a16767-fe05-4bf8-b93e-fc309e5f40c0",
                       "hasValidationError" : false,
                       "id" : "pbContainer",
                       "rows" : [
@@ -233,7 +233,7 @@
                                 "type" : "constant"
                               }
                             },
-                            "reference" : "84849409-186d-4bc7-9055-9b7323ea6661",
+                            "reference" : "f9aa5d8b-138d-41bf-8e89-de0afbc41054",
                             "hasValidationError" : false,
                             "id" : "pbSelect",
                             "description" : ""
@@ -307,7 +307,7 @@
                                 "value" : 12
                               }
                             },
-                            "reference" : "dd57d22d-b105-4805-ac30-8f6a581ae1cb",
+                            "reference" : "b24c46ea-c2d5-40ab-b627-360e85ca6a12",
                             "hasValidationError" : false,
                             "id" : "pbButton",
                             "description" : ""
@@ -371,8 +371,8 @@
                           "value" : "{\n  \"persistenceId_string\" : \"\"\n}"
                         },
                         "disabled" : {
-                          "type" : "expression",
-                          "value" : "formInput.serviceQueryInput.serviceCategory.length >= 3"
+                          "type" : "constant",
+                          "value" : false
                         },
                         "alignment" : {
                           "type" : "constant",
@@ -381,33 +381,9 @@
                         "dimension" : {
                           "type" : "constant",
                           "value" : 12
-                        },
-                        "assign" : {
-                          "type" : "constant",
-                          "value" : false
-                        },
-                        "url" : {
-                          "type" : "interpolation"
-                        },
-                        "responseStatusCode" : {
-                          "type" : "variable"
-                        },
-                        "dataFromSuccess" : {
-                          "type" : "variable"
-                        },
-                        "closeOnSuccess" : {
-                          "type" : "constant",
-                          "value" : false
-                        },
-                        "dataFromError" : {
-                          "type" : "variable"
-                        },
-                        "modalId" : {
-                          "type" : "constant",
-                          "value" : ""
                         }
                       },
-                      "reference" : "2ce91b4a-5d4b-4d48-9744-555d5b060115",
+                      "reference" : "ffbb5511-43de-4fdf-aa05-ea514130b271",
                       "hasValidationError" : false,
                       "id" : "pbButton",
                       "description" : ""
@@ -471,7 +447,7 @@
                           "value" : true
                         }
                       },
-                      "reference" : "02c56732-fa8d-4e75-b34a-a891922a2b5f",
+                      "reference" : "7bcbc195-d29d-44f2-b6e5-723b05c689fc",
                       "hasValidationError" : false,
                       "id" : "pbInput",
                       "description" : ""
@@ -535,7 +511,7 @@
                           "value" : true
                         }
                       },
-                      "reference" : "d4c26862-d183-476f-890c-1710aa49e3df",
+                      "reference" : "b0725ffe-45c8-459d-af5a-ab7e1c316f7a",
                       "hasValidationError" : false,
                       "id" : "pbInput",
                       "description" : ""
@@ -611,7 +587,7 @@
                           "value" : "formInput.serviceQueryInput.offerValidUntil"
                         }
                       },
-                      "reference" : "52c728b0-d099-4309-ac40-6c6a145766ee",
+                      "reference" : "a9f7693a-5195-4883-97f5-5a8c63d4da51",
                       "hasValidationError" : false,
                       "id" : "pbDatePicker",
                       "description" : ""
@@ -687,7 +663,7 @@
                           "value" : "formInput.serviceQueryInput.jobDeadline"
                         }
                       },
-                      "reference" : "545ed019-08cc-46d0-9ef3-ade90c3d0c0c",
+                      "reference" : "496a4f95-f52c-45f5-b885-695da0b46eca",
                       "hasValidationError" : false,
                       "id" : "pbDatePicker",
                       "description" : ""
@@ -751,7 +727,388 @@
                           "value" : true
                         }
                       },
-                      "reference" : "52269e53-837e-433f-87a2-96e84e5ed143",
+                      "reference" : "326af6a1-8060-475c-8200-6a47bfa8e970",
+                      "hasValidationError" : false,
+                      "id" : "pbInput",
+                      "description" : ""
+                    }
+                  ],
+                  [
+                    {
+                      "type" : "component",
+                      "dimension" : {
+                        "md" : 12,
+                        "sm" : 12,
+                        "xs" : 12,
+                        "lg" : 12
+                      },
+                      "propertyValues" : {
+                        "hidden" : {
+                          "type" : "constant",
+                          "value" : true
+                        },
+                        "level" : {
+                          "type" : "constant",
+                          "value" : "Level 4"
+                        },
+                        "cssClasses" : {
+                          "type" : "constant",
+                          "value" : ""
+                        },
+                        "text" : {
+                          "type" : "interpolation",
+                          "value" : "Bids"
+                        },
+                        "alignment" : {
+                          "type" : "constant",
+                          "value" : "left"
+                        },
+                        "dimension" : {
+                          "type" : "constant",
+                          "value" : 12
+                        }
+                      },
+                      "reference" : "4c7c0adf-6be2-495e-ae77-61c7b1479051",
+                      "hasValidationError" : false,
+                      "id" : "pbTitle",
+                      "description" : ""
+                    }
+                  ],
+                  [
+                    {
+                      "type" : "container",
+                      "dimension" : {
+                        "md" : 12,
+                        "sm" : 12,
+                        "xs" : 12,
+                        "lg" : 12
+                      },
+                      "propertyValues" : {
+                        "repeatedCollection" : {
+                          "type" : "variable",
+                          "value" : "formInput.serviceQueryInput.bids"
+                        },
+                        "hidden" : {
+                          "type" : "constant",
+                          "value" : false
+                        },
+                        "cssClasses" : {
+                          "type" : "constant",
+                          "value" : ""
+                        },
+                        "dimension" : {
+                          "type" : "constant",
+                          "value" : 12
+                        }
+                      },
+                      "reference" : "a0c03464-6b56-4850-a05a-3e73bcdac377",
+                      "hasValidationError" : false,
+                      "id" : "pbContainer",
+                      "rows" : [
+                        [
+                          {
+                            "type" : "component",
+                            "dimension" : {
+                              "md" : 12,
+                              "sm" : 12,
+                              "xs" : 12,
+                              "lg" : 12
+                            },
+                            "propertyValues" : {
+                              "labelHidden" : {
+                                "type" : "constant",
+                                "value" : false
+                              },
+                              "hidden" : {
+                                "type" : "constant",
+                                "value" : true
+                              },
+                              "labelPosition" : {
+                                "type" : "constant",
+                                "value" : "top"
+                              },
+                              "cssClasses" : {
+                                "type" : "constant",
+                                "value" : ""
+                              },
+                              "availableValues" : {
+                                "type" : "expression",
+                                "value" : "serviceQueryBid_query"
+                              },
+                              "labelWidth" : {
+                                "type" : "constant",
+                                "value" : 1
+                              },
+                              "label" : {
+                                "type" : "interpolation",
+                                "value" : "Bids"
+                              },
+                              "placeholder" : {
+                                "type" : "constant",
+                                "value" : "Select a Bids"
+                              },
+                              "dimension" : {
+                                "type" : "constant",
+                                "value" : 12
+                              },
+                              "value" : {
+                                "type" : "variable",
+                                "value" : "$item"
+                              },
+                              "required" : {
+                                "type" : "constant",
+                                "value" : true
+                              },
+                              "disabled" : {
+                                "type" : "constant",
+                                "value" : false
+                              },
+                              "displayedKey" : {
+                                "type" : "constant"
+                              },
+                              "returnedKey" : {
+                                "type" : "constant"
+                              }
+                            },
+                            "reference" : "8b832e38-a868-4b1f-a306-841c8ba684d8",
+                            "hasValidationError" : false,
+                            "id" : "pbSelect",
+                            "description" : ""
+                          }
+                        ],
+                        [
+                          {
+                            "type" : "component",
+                            "dimension" : {
+                              "md" : 12,
+                              "sm" : 12,
+                              "xs" : 12,
+                              "lg" : 12
+                            },
+                            "propertyValues" : {
+                              "removeItem" : {
+                                "type" : "variable",
+                                "value" : "$item"
+                              },
+                              "hidden" : {
+                                "type" : "constant",
+                                "value" : false
+                              },
+                              "cssClasses" : {
+                                "type" : "constant",
+                                "value" : ""
+                              },
+                              "buttonStyle" : {
+                                "type" : "constant",
+                                "value" : "danger"
+                              },
+                              "label" : {
+                                "type" : "interpolation",
+                                "value" : "<span class=\"glyphicon glyphicon-remove\"></span>"
+                              },
+                              "dataToSend" : {
+                                "type" : "expression"
+                              },
+                              "labelHidden" : {
+                                "type" : "constant",
+                                "value" : false
+                              },
+                              "collectionPosition" : {
+                                "type" : "constant",
+                                "value" : "Item"
+                              },
+                              "targetUrlOnSuccess" : {
+                                "type" : "interpolation"
+                              },
+                              "action" : {
+                                "type" : "constant",
+                                "value" : "Remove from collection"
+                              },
+                              "collectionToModify" : {
+                                "type" : "variable",
+                                "value" : "$collection"
+                              },
+                              "valueToAdd" : {
+                                "type" : "expression"
+                              },
+                              "disabled" : {
+                                "type" : "constant",
+                                "value" : false
+                              },
+                              "alignment" : {
+                                "type" : "constant",
+                                "value" : "right"
+                              },
+                              "dimension" : {
+                                "type" : "constant",
+                                "value" : 12
+                              }
+                            },
+                            "reference" : "a8951afb-0bc7-4368-87f7-a2ed62249c2d",
+                            "hasValidationError" : false,
+                            "id" : "pbButton",
+                            "description" : ""
+                          }
+                        ]
+                      ]
+                    }
+                  ],
+                  [
+                    {
+                      "type" : "component",
+                      "dimension" : {
+                        "md" : 12,
+                        "sm" : 12,
+                        "xs" : 12,
+                        "lg" : 12
+                      },
+                      "propertyValues" : {
+                        "removeItem" : {
+                          "type" : "variable"
+                        },
+                        "hidden" : {
+                          "type" : "constant",
+                          "value" : true
+                        },
+                        "cssClasses" : {
+                          "type" : "constant",
+                          "value" : ""
+                        },
+                        "buttonStyle" : {
+                          "type" : "constant",
+                          "value" : "primary"
+                        },
+                        "label" : {
+                          "type" : "interpolation",
+                          "value" : "<span class=\"glyphicon glyphicon-plus\"></span> Add ServiceQueryBid"
+                        },
+                        "dataToSend" : {
+                          "type" : "expression"
+                        },
+                        "labelHidden" : {
+                          "type" : "constant",
+                          "value" : false
+                        },
+                        "collectionPosition" : {
+                          "type" : "constant"
+                        },
+                        "targetUrlOnSuccess" : {
+                          "type" : "interpolation"
+                        },
+                        "action" : {
+                          "type" : "constant",
+                          "value" : "Add to collection"
+                        },
+                        "collectionToModify" : {
+                          "type" : "variable",
+                          "value" : "formInput.serviceQueryInput.bids"
+                        },
+                        "valueToAdd" : {
+                          "type" : "expression",
+                          "value" : "{\n  \"persistenceId_string\" : \"\"\n}"
+                        },
+                        "disabled" : {
+                          "type" : "constant",
+                          "value" : false
+                        },
+                        "alignment" : {
+                          "type" : "constant",
+                          "value" : "left"
+                        },
+                        "dimension" : {
+                          "type" : "constant",
+                          "value" : 12
+                        },
+                        "assign" : {
+                          "type" : "constant",
+                          "value" : false
+                        },
+                        "url" : {
+                          "type" : "interpolation"
+                        },
+                        "responseStatusCode" : {
+                          "type" : "variable"
+                        },
+                        "dataFromSuccess" : {
+                          "type" : "variable"
+                        },
+                        "closeOnSuccess" : {
+                          "type" : "constant",
+                          "value" : false
+                        },
+                        "dataFromError" : {
+                          "type" : "variable"
+                        },
+                        "modalId" : {
+                          "type" : "constant",
+                          "value" : ""
+                        }
+                      },
+                      "reference" : "712790fb-b76b-405b-acec-a22c00445332",
+                      "hasValidationError" : false,
+                      "id" : "pbButton",
+                      "description" : ""
+                    }
+                  ],
+                  [
+                    {
+                      "type" : "component",
+                      "dimension" : {
+                        "md" : 12,
+                        "sm" : 12,
+                        "xs" : 12,
+                        "lg" : 12
+                      },
+                      "propertyValues" : {
+                        "labelHidden" : {
+                          "type" : "constant",
+                          "value" : false
+                        },
+                        "hidden" : {
+                          "type" : "constant",
+                          "value" : false
+                        },
+                        "labelPosition" : {
+                          "type" : "constant",
+                          "value" : "top"
+                        },
+                        "cssClasses" : {
+                          "type" : "constant",
+                          "value" : ""
+                        },
+                        "labelWidth" : {
+                          "type" : "constant",
+                          "value" : 1
+                        },
+                        "readOnly" : {
+                          "type" : "constant",
+                          "value" : false
+                        },
+                        "label" : {
+                          "type" : "interpolation",
+                          "value" : "Min Offers"
+                        },
+                        "placeholder" : {
+                          "type" : "constant"
+                        },
+                        "type" : {
+                          "type" : "constant",
+                          "value" : "number"
+                        },
+                        "dimension" : {
+                          "type" : "constant",
+                          "value" : 12
+                        },
+                        "value" : {
+                          "type" : "variable",
+                          "value" : "formInput.serviceQueryInput.minOffers"
+                        },
+                        "required" : {
+                          "type" : "constant",
+                          "value" : true
+                        }
+                      },
+                      "reference" : "d6b5a6d0-36e7-46c6-a126-70848fd1e562",
                       "hasValidationError" : false,
                       "id" : "pbInput",
                       "description" : ""
@@ -829,32 +1186,9 @@
                   "dimension" : {
                     "type" : "constant",
                     "value" : 12
-                  },
-                  "assign" : {
-                    "type" : "constant",
-                    "value" : false
-                  },
-                  "url" : {
-                    "type" : "interpolation"
-                  },
-                  "responseStatusCode" : {
-                    "type" : "variable",
-                    "value" : ""
-                  },
-                  "dataFromSuccess" : {
-                    "type" : "variable",
-                    "value" : ""
-                  },
-                  "closeOnSuccess" : {
-                    "type" : "constant",
-                    "value" : false
-                  },
-                  "modalId" : {
-                    "type" : "constant",
-                    "value" : ""
                   }
                 },
-                "reference" : "60f8fdb9-a46e-49f3-b200-1a268704bab8",
+                "reference" : "5c982643-bf8c-4008-86d6-4182e370797b",
                 "hasValidationError" : false,
                 "id" : "pbButton",
                 "description" : ""
@@ -906,7 +1240,7 @@
                     "value" : 12
                   }
                 },
-                "reference" : "795964c8-1ff4-474e-9d22-5b3f84614279",
+                "reference" : "97d1d5d9-4191-4302-963b-c19f94f8fa6b",
                 "hasValidationError" : false,
                 "id" : "pbText",
                 "description" : ""
@@ -919,22 +1253,29 @@
   ],
   "assets" : [
     {
-      "id" : "859ba569-605a-4364-b9c5-8d1d27027a70",
-      "name" : "localization.json",
-      "type" : "json",
+      "id" : "55a75d09-d8f3-4b49-9451-46c14e3760e0",
+      "name" : "style.css",
+      "type" : "css",
       "order" : 0,
       "external" : false
     },
     {
-      "id" : "e3185231-926a-47f7-aecb-6c92a4715514",
-      "name" : "style.css",
-      "type" : "css",
+      "id" : "a43b0169-5799-4065-b083-04c86c4817c2",
+      "name" : "localization.json",
+      "type" : "json",
       "order" : 0,
       "external" : false
     }
   ],
   "inactiveAssets" : [ ],
   "variables" : {
+    "serviceQueryBid_query" : {
+      "type" : "url",
+      "value" : [
+        "../API/bdm/businessData/rs.ac.uns.ftn.model.ServiceQueryBid?q=find&p=0&c=99"
+      ],
+      "exposed" : false
+    },
     "formInput" : {
       "type" : "json",
       "value" : [
@@ -945,7 +1286,9 @@
         "    \"maxPossiblePayout\" : 0,",
         "    \"offerValidUntil\" : null,",
         "    \"jobDeadline\" : null,",
-        "    \"maxOffers\" : 0",
+        "    \"maxOffers\" : 0,",
+        "    \"bids\" : [ ],",
+        "    \"minOffers\" : 0",
         "  }",
         "}"
       ],
@@ -984,7 +1327,7 @@
     }
   },
   "hasValidationError" : false,
-  "uuid" : "4d9d95e9-0006-4f18-af3f-35a9531902ff",
+  "uuid" : "b324ce5f-a040-4196-b943-c08cf0696d59",
   "type" : "form",
   "description" : "Page generated with Bonita UI designer"
 }

@@ -27,6 +27,7 @@
                 <field type="LOCALDATE" length="255" name="jobDeadline" nullable="false" collection="false"/>
                 <field type="INTEGER" length="255" name="maxOffers" nullable="false" collection="false"/>
                 <relationField type="AGGREGATION" reference="rs.ac.uns.ftn.model.ServiceQueryBid" fetchType="LAZY" name="bids" nullable="true" collection="true"/>
+                <field type="INTEGER" length="255" name="minOffers" nullable="false" collection="false"/>
             </fields>
             <uniqueConstraints/>
             <queries/>
