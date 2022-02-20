@@ -13,16 +13,24 @@
     <user userName="admin">
       <firstName>Primary</firstName>
       <lastName>Admin</lastName>
-      <personalData/>
-      <professionalData/>
+      <personalData>
+        <email>admina@localhost</email>
+      </personalData>
+      <professionalData>
+        <email>admina@localhost</email>
+      </professionalData>
       <password encrypted="false">admin</password>
       <customUserInfoValues/>
     </user>
     <user userName="adminb">
       <firstName>Seconday</firstName>
       <lastName>Admin</lastName>
-      <personalData/>
-      <professionalData/>
+      <personalData>
+        <email>adminb@localhost</email>
+      </personalData>
+      <professionalData>
+        <email>adminb@localhost</email>
+      </professionalData>
       <password encrypted="false">adminb</password>
       <customUserInfoValues/>
     </user>
@@ -30,7 +38,9 @@
       <firstName>Customer</firstName>
       <lastName>1</lastName>
       <personalData/>
-      <professionalData/>
+      <professionalData>
+        <email>customer@localhost</email>
+      </professionalData>
       <password encrypted="false">customer1</password>
       <customUserInfoValues/>
     </user>

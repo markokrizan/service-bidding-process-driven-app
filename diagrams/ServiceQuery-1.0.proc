@@ -89,6 +89,70 @@
           <dynamicLabel xmi:type="expression:Expression" xmi:id="_T8KmoJGpEeyRXarIdbRppA" name="" content="" returnTypeFixed="true"/>
           <dynamicDescription xmi:type="expression:Expression" xmi:id="_T8J_kJGpEeyRXarIdbRppA" name="" content="" returnTypeFixed="true"/>
           <stepSummary xmi:type="expression:Expression" xmi:id="_T8KmoZGpEeyRXarIdbRppA" name="" content="" returnTypeFixed="true"/>
+          <connectors xmi:type="process:Connector" xmi:id="_9el2MJKAEeyVFJLS2ffyVg" name="notifyUserAboutNotEnoughSuppliers" definitionId="email" event="ON_ENTER" throwErrorEvent="true" namedError="NotEnoughSuppliersNotificationError" definitionVersion="1.2.0">
+            <configuration xmi:type="connectorconfiguration:ConnectorConfiguration" xmi:id="_9el2MZKAEeyVFJLS2ffyVg" definitionId="email" version="1.2.0" modelVersion="7.12.0-004">
+              <parameters xmi:type="connectorconfiguration:ConnectorParameter" xmi:id="_9el2MpKAEeyVFJLS2ffyVg" key="smtpHost">
+                <expression xmi:type="expression:Expression" xmi:id="_9el2M5KAEeyVFJLS2ffyVg" name="localhost" content="localhost" returnTypeFixed="true"/>
+              </parameters>
+              <parameters xmi:type="connectorconfiguration:ConnectorParameter" xmi:id="_9el2NJKAEeyVFJLS2ffyVg" key="smtpPort">
+                <expression xmi:type="expression:Expression" xmi:id="_9el2NZKAEeyVFJLS2ffyVg" name="1025" content="1025" returnType="java.lang.Integer" returnTypeFixed="true"/>
+              </parameters>
+              <parameters xmi:type="connectorconfiguration:ConnectorParameter" xmi:id="_9el2NpKAEeyVFJLS2ffyVg" key="sslSupport">
+                <expression xmi:type="expression:Expression" xmi:id="_9el2N5KAEeyVFJLS2ffyVg" name="false" content="false" returnType="java.lang.Boolean" returnTypeFixed="true"/>
+              </parameters>
+              <parameters xmi:type="connectorconfiguration:ConnectorParameter" xmi:id="_9el2OJKAEeyVFJLS2ffyVg" key="starttlsSupport">
+                <expression xmi:type="expression:Expression" xmi:id="_9emdQJKAEeyVFJLS2ffyVg" name="false" content="false" returnType="java.lang.Boolean" returnTypeFixed="true"/>
+              </parameters>
+              <parameters xmi:type="connectorconfiguration:ConnectorParameter" xmi:id="_9emdQZKAEeyVFJLS2ffyVg" key="trustCertificate">
+                <expression xmi:type="expression:Expression" xmi:id="_9emdQpKAEeyVFJLS2ffyVg" name="false" content="false" returnType="java.lang.Boolean" returnTypeFixed="true"/>
+              </parameters>
+              <parameters xmi:type="connectorconfiguration:ConnectorParameter" xmi:id="_9emdQ5KAEeyVFJLS2ffyVg" key="userName">
+                <expression xmi:type="expression:Expression" xmi:id="_9emdRJKAEeyVFJLS2ffyVg" content="" returnTypeFixed="true"/>
+              </parameters>
+              <parameters xmi:type="connectorconfiguration:ConnectorParameter" xmi:id="_9emdRZKAEeyVFJLS2ffyVg" key="password">
+                <expression xmi:type="expression:Expression" xmi:id="_9emdRpKAEeyVFJLS2ffyVg" content="" returnTypeFixed="true"/>
+              </parameters>
+              <parameters xmi:type="connectorconfiguration:ConnectorParameter" xmi:id="_9emdR5KAEeyVFJLS2ffyVg" key="from">
+                <expression xmi:type="expression:Expression" xmi:id="_9emdSJKAEeyVFJLS2ffyVg" name="process@localhost" content="process@localhost" returnTypeFixed="true"/>
+              </parameters>
+              <parameters xmi:type="connectorconfiguration:ConnectorParameter" xmi:id="_9emdSZKAEeyVFJLS2ffyVg" key="returnPath">
+                <expression xmi:type="expression:Expression" xmi:id="_9emdSpKAEeyVFJLS2ffyVg" content="" returnTypeFixed="true"/>
+              </parameters>
+              <parameters xmi:type="connectorconfiguration:ConnectorParameter" xmi:id="_9emdS5KAEeyVFJLS2ffyVg" key="to">
+                <expression xmi:type="expression:Expression" xmi:id="_9emdTJKAEeyVFJLS2ffyVg" name="to()" content="def professionalEmail = apiAccessor.getIdentityAPI().getUserContactData(taskAssigneeId, false).getEmail();&#xA;&#xA;def personalEmail = apiAccessor.getIdentityAPI().getUserContactData(taskAssigneeId, true).getEmail();&#xA;&#xA;if (professionalEmail != null) {&#xA;&#x9;return professionalEmail;&#xA;} else if (personalEmail != null) {&#xA;&#x9;return personalEmail;&#xA;} else {&#xA;&#x9;return 'user@localhost';&#xA;}&#xA;&#xA;&#x9;&#xA;&#x9;&#xA;&#x9;&#xA;&#xA;" interpreter="GROOVY" type="TYPE_READ_ONLY_SCRIPT" returnTypeFixed="true">
+                  <referencedElements xmi:type="expression:Expression" xmi:id="_FlNLcJKWEeyVFJLS2ffyVg" name="apiAccessor" content="apiAccessor" type="TYPE_ENGINE_CONSTANT" returnType="org.bonitasoft.engine.api.APIAccessor"/>
+                  <referencedElements xmi:type="expression:Expression" xmi:id="_FlNLcZKWEeyVFJLS2ffyVg" name="taskAssigneeId" content="taskAssigneeId" type="TYPE_ENGINE_CONSTANT" returnType="java.lang.Long"/>
+                </expression>
+              </parameters>
+              <parameters xmi:type="connectorconfiguration:ConnectorParameter" xmi:id="_9emdTZKAEeyVFJLS2ffyVg" key="bcc">
+                <expression xmi:type="expression:Expression" xmi:id="_9emdTpKAEeyVFJLS2ffyVg" content="" returnTypeFixed="true"/>
+              </parameters>
+              <parameters xmi:type="connectorconfiguration:ConnectorParameter" xmi:id="_9emdT5KAEeyVFJLS2ffyVg" key="cc">
+                <expression xmi:type="expression:Expression" xmi:id="_9emdUJKAEeyVFJLS2ffyVg" content="" returnTypeFixed="true"/>
+              </parameters>
+              <parameters xmi:type="connectorconfiguration:ConnectorParameter" xmi:id="_9emdUZKAEeyVFJLS2ffyVg" key="subject">
+                <expression xmi:type="expression:Expression" xmi:id="_9emdUpKAEeyVFJLS2ffyVg" name="Not enough suppliers available for bidding" content="Not enough suppliers available for bidding" returnTypeFixed="true"/>
+              </parameters>
+              <parameters xmi:type="connectorconfiguration:ConnectorParameter" xmi:id="_9emdU5KAEeyVFJLS2ffyVg" key="html">
+                <expression xmi:type="expression:Expression" xmi:id="_9emdVJKAEeyVFJLS2ffyVg" name="false" content="false" returnType="java.lang.Boolean" returnTypeFixed="true"/>
+              </parameters>
+              <parameters xmi:type="connectorconfiguration:ConnectorParameter" xmi:id="_9emdVZKAEeyVFJLS2ffyVg" key="message">
+                <expression xmi:type="expression:Expression" xmi:id="_9emdVpKAEeyVFJLS2ffyVg" name="&lt;pattern-expression>" content="Not enough suppliers available for bidding - please log in to the process portal and verify if you agree that less than requested number of users bid on your query." type="TYPE_PATTERN" returnTypeFixed="true"/>
+              </parameters>
+              <parameters xmi:type="connectorconfiguration:ConnectorParameter" xmi:id="_9emdV5KAEeyVFJLS2ffyVg" key="headers">
+                <expression xmi:type="expression:TableExpression" xmi:id="_9emdWJKAEeyVFJLS2ffyVg"/>
+              </parameters>
+              <parameters xmi:type="connectorconfiguration:ConnectorParameter" xmi:id="_9emdWZKAEeyVFJLS2ffyVg" key="charset">
+                <expression xmi:type="expression:Expression" xmi:id="_9emdWpKAEeyVFJLS2ffyVg" name="UTF-8" content="UTF-8" returnTypeFixed="true"/>
+              </parameters>
+              <parameters xmi:type="connectorconfiguration:ConnectorParameter" xmi:id="_9emdW5KAEeyVFJLS2ffyVg" key="replyTo">
+                <expression xmi:type="expression:Expression" xmi:id="_9emdXJKAEeyVFJLS2ffyVg" content="" returnTypeFixed="true"/>
+              </parameters>
+              <parameters xmi:type="connectorconfiguration:ConnectorParameter" xmi:id="_9emdXZKAEeyVFJLS2ffyVg" key="attachments">
+                <expression xmi:type="expression:ListExpression" xmi:id="_9emdXpKAEeyVFJLS2ffyVg"/>
+              </parameters>
+            </configuration>
+          </connectors>
           <operations xmi:type="expression:Operation" xmi:id="_7eoEMJJtEeyGCdJmaZvIfA">
             <leftOperand xmi:type="expression:Expression" xmi:id="_7eoEMZJtEeyGCdJmaZvIfA" name="biddingAllowedForSmallerNumberOfProviders" content="biddingAllowedForSmallerNumberOfProviders" type="TYPE_VARIABLE" returnType="java.lang.Boolean">
               <referencedElements xmi:type="process:Data" xmi:id="_8VVpwJJtEeyGCdJmaZvIfA" name="biddingAllowedForSmallerNumberOfProviders" dataType="_XITTC45xEeyw3fSZnDuAFg"/>
