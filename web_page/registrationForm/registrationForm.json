@@ -2,7 +2,7 @@
   "modelVersion" : "2.2",
   "id" : "registrationForm",
   "name" : "registrationForm",
-  "lastUpdate" : 1647461647952,
+  "lastUpdate" : 1647705194483,
   "rows" : [
     [
       {
@@ -76,7 +76,8 @@
                 },
                 "propertyValues" : {
                   "repeatedCollection" : {
-                    "type" : "variable"
+                    "type" : "variable",
+                    "value" : ""
                   },
                   "hidden" : {
                     "type" : "constant",
@@ -151,12 +152,82 @@
                         "required" : {
                           "type" : "constant",
                           "value" : true
+                        },
+                        "minLength" : {
+                          "type" : "constant",
+                          "value" : ""
+                        },
+                        "maxLength" : {
+                          "type" : "constant",
+                          "value" : ""
+                        },
+                        "min" : {
+                          "type" : "constant"
+                        },
+                        "max" : {
+                          "type" : "constant"
+                        },
+                        "step" : {
+                          "type" : "constant",
+                          "value" : 1
                         }
                       },
                       "reference" : "bcca86a8-4a78-425c-96b4-6d28e39d0048",
                       "hasValidationError" : false,
                       "id" : "pbInput",
                       "description" : ""
+                    }
+                  ],
+                  [
+                    {
+                      "type" : "component",
+                      "dimension" : {
+                        "xs" : 12,
+                        "sm" : 12,
+                        "md" : 12,
+                        "lg" : 12
+                      },
+                      "propertyValues" : {
+                        "cssClasses" : {
+                          "type" : "constant",
+                          "value" : "text-danger"
+                        },
+                        "hidden" : {
+                          "type" : "expression",
+                          "value" : "usernameAvailable"
+                        },
+                        "labelHidden" : {
+                          "type" : "constant",
+                          "value" : true
+                        },
+                        "label" : {
+                          "type" : "interpolation",
+                          "value" : "Default label"
+                        },
+                        "labelPosition" : {
+                          "type" : "constant",
+                          "value" : "top"
+                        },
+                        "labelWidth" : {
+                          "type" : "constant",
+                          "value" : 4
+                        },
+                        "allowHTML" : {
+                          "type" : "constant",
+                          "value" : false
+                        },
+                        "text" : {
+                          "type" : "interpolation",
+                          "value" : "Username not available"
+                        },
+                        "alignment" : {
+                          "type" : "constant",
+                          "value" : "left"
+                        }
+                      },
+                      "reference" : "0c415910-d889-4536-be82-2e1de7d463c5",
+                      "hasValidationError" : false,
+                      "id" : "pbText"
                     }
                   ],
                   [
@@ -901,7 +972,7 @@
                   },
                   "disabled" : {
                     "type" : "expression",
-                    "value" : "$form.$invalid"
+                    "value" : "$form.$invalid || !usernameAvailable"
                   },
                   "alignment" : {
                     "type" : "constant",
@@ -910,6 +981,29 @@
                   "dimension" : {
                     "type" : "constant",
                     "value" : 12
+                  },
+                  "assign" : {
+                    "type" : "constant",
+                    "value" : false
+                  },
+                  "url" : {
+                    "type" : "interpolation"
+                  },
+                  "responseStatusCode" : {
+                    "type" : "variable",
+                    "value" : ""
+                  },
+                  "dataFromSuccess" : {
+                    "type" : "variable",
+                    "value" : ""
+                  },
+                  "closeOnSuccess" : {
+                    "type" : "constant",
+                    "value" : false
+                  },
+                  "modalId" : {
+                    "type" : "constant",
+                    "value" : ""
                   }
                 },
                 "reference" : "24bc8f14-255c-49a4-ab6e-feffc4d30751",
@@ -962,6 +1056,14 @@
                   "dimension" : {
                     "type" : "constant",
                     "value" : 12
+                  },
+                  "labelPosition" : {
+                    "type" : "constant",
+                    "value" : "top"
+                  },
+                  "labelWidth" : {
+                    "type" : "constant",
+                    "value" : 4
                   }
                 },
                 "reference" : "c58be609-5b7f-4c49-a04e-cf40ebe2cef1",
@@ -1035,6 +1137,34 @@
         "return {",
         "\tuserDataInput: $data.formInput.userDataInput",
         "}"
+      ],
+      "exposed" : false
+    },
+    "currentUserName" : {
+      "type" : "expression",
+      "value" : [
+        "return $data.formInput.userDataInput.username;"
+      ],
+      "exposed" : false
+    },
+    "existingUsers" : {
+      "type" : "url",
+      "value" : [
+        "../API/identity/user?p=0&c=10&o=userName%20ASC&s={{currentUserName}}&f=enabled%3dtrue"
+      ],
+      "advancedOptions" : { },
+      "exposed" : false
+    },
+    "usernameAvailable" : {
+      "type" : "expression",
+      "value" : [
+        "if (!$data.currentUserName) {",
+        "    return true;",
+        "}",
+        "",
+        "var existingUsers = $data.existingUsers ? $data.existingUsers : [];",
+        "",
+        "return existingUsers.length === 0;"
       ],
       "exposed" : false
     }
