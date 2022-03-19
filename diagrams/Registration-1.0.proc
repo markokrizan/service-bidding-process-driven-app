@@ -26,9 +26,9 @@
                 <expression xmi:type="expression:Expression" xmi:id="_nYxLFWzPEeyVjOIXdMtvKQ" returnType="java.util.List" returnTypeFixed="true"/>
               </parameters>
               <parameters xmi:type="connectorconfiguration:ConnectorParameter" xmi:id="_nYxLFmzPEeyVjOIXdMtvKQ" key="fakeScriptExpression">
-                <expression xmi:type="expression:Expression" xmi:id="_nYxLF2zPEeyVjOIXdMtvKQ" name="userRegistration" content="import org.bonitasoft.engine.identity.ContactDataCreator&#xA;import org.bonitasoft.engine.identity.UserCreator&#xA;import org.bonitasoft.engine.profile.ProfileMemberCreator&#xA;import org.bonitasoft.engine.profile.ProfileSearchDescriptor&#xA;import org.bonitasoft.engine.search.SearchOptionsBuilder&#xA;import java.util.logging.Logger;&#xA;&#xA;def identityApi = apiAccessor.getIdentityAPI();&#xA;def profileApi = apiAccessor.getProfileAPI();&#xA;def logger = Logger.getLogger(&quot;org.bonitasoft.groovy.script.userRegistrationConnectorIn&quot;);&#xA;&#xA;def creator = new UserCreator(userData[&quot;username&quot;], userData[&quot;password&quot;]);&#xA;&#xA;creator&#xA;&#x9;.setFirstName(userData[&quot;firstName&quot;])&#xA;&#x9;.setLastName(userData[&quot;lastName&quot;]);&#xA;&#xA;def contactData = new ContactDataCreator()&#xA;&#x9;.setCountry(userData[&quot;country&quot;])&#xA;&#x9;.setZipCode(userData[&quot;zip&quot;])&#xA;&#x9;.setCity(userData[&quot;city&quot;])&#xA;&#x9;.setAddress(userData[&quot;address&quot;])&#xA;&#x9;.setEmail(userData[&quot;email&quot;]);&#xA;&#xA;creator.setPersonalContactData(contactData)&#xA;creator.setProfessionalContactData(contactData);&#xA;&#xA;def newUser = identityApi.createUser(creator);&#xA;&#xA;def group = null;&#xA;&#xA;if (userData[&quot;isCompanyRepresentative&quot;]) {&#xA;&#x9;group = identityApi.getGroupByPath('/ServiceBidding/Suppliers');&#xA;} else {&#xA;&#x9;group = identityApi.getGroupByPath('/ServiceBidding/Customers');&#xA;}&#xA;&#xA;def role = identityApi.getRoleByName(&quot;member&quot;);&#xA;&#xA;def searchOptionsBuilder = new SearchOptionsBuilder(0, 10);&#xA;searchOptionsBuilder.filter(ProfileSearchDescriptor.NAME, &quot;User&quot;);&#xA;def searchResultProfile = profileApi.searchProfiles(searchOptionsBuilder.done())&#xA;def profile = searchResultProfile.getResult().getAt(0);&#xA;def profileMemberCreator = new ProfileMemberCreator(profile.getId());&#xA;profileMemberCreator.setUserId(newUser.getId());&#xA;&#xA;profileApi.createProfileMember(profileMemberCreator);&#xA;&#xA;def createdUser = [&#xA;&#x9;id: newUser.getId(),&#xA;&#x9;username: userData[&quot;username&quot;],&#xA;&#x9;password: userData[&quot;password&quot;],&#xA;&#x9;username: userData[&quot;username&quot;],&#xA;&#x9;firstName: userData[&quot;firstName&quot;],&#xA;&#x9;lastName: userData[&quot;lastName&quot;],&#xA;&#x9;isCompanyRepresentative: userData[&quot;isCompanyRepresentative&quot;]&#xA;];&#xA;&#xA;logger.info(&quot;Registered user &quot; + newUser.getId() + &quot; | isCompanyRepresentative: &quot; + userData[&quot;isCompanyRepresentative&quot;]);&#xA;&#xA;identityApi.addUserMembership(&#xA;&#x9;newUser.id,&#xA;&#x9;group.id,&#xA;&#x9;role.id&#xA;);&#xA;&#xA;return createdUser;&#xA;&#xA;" interpreter="GROOVY" type="TYPE_READ_ONLY_SCRIPT" returnType="java.lang.Object" returnTypeFixed="true">
-                  <referencedElements xmi:type="expression:Expression" xmi:id="_6kQowKVoEey_T4gDK-WXXg" name="apiAccessor" content="apiAccessor" type="TYPE_ENGINE_CONSTANT" returnType="org.bonitasoft.engine.api.APIAccessor"/>
-                  <referencedElements xmi:type="process:JavaObjectData" xmi:id="_6kQowaVoEey_T4gDK-WXXg" name="userData" dataType="_NUAVImgqEeyiO4cwlqdIVg" className="java.util.Map"/>
+                <expression xmi:type="expression:Expression" xmi:id="_nYxLF2zPEeyVjOIXdMtvKQ" name="userRegistration" content="import org.bonitasoft.engine.identity.ContactDataCreator&#xA;import org.bonitasoft.engine.identity.UserCreator&#xA;import org.bonitasoft.engine.profile.ProfileMemberCreator&#xA;import org.bonitasoft.engine.profile.ProfileSearchDescriptor&#xA;import org.bonitasoft.engine.search.SearchOptionsBuilder&#xA;import java.util.logging.Logger;&#xA;&#xA;def identityApi = apiAccessor.getIdentityAPI();&#xA;def profileApi = apiAccessor.getProfileAPI();&#xA;def logger = Logger.getLogger(&quot;org.bonitasoft.groovy.script.userRegistrationConnectorIn&quot;);&#xA;&#xA;def creator = new UserCreator(userData[&quot;username&quot;], userData[&quot;password&quot;]);&#xA;&#xA;creator&#xA;&#x9;.setFirstName(userData[&quot;firstName&quot;])&#xA;&#x9;.setLastName(userData[&quot;lastName&quot;]);&#xA;&#xA;def contactData = new ContactDataCreator()&#xA;&#x9;.setCountry(userData[&quot;country&quot;])&#xA;&#x9;.setZipCode(userData[&quot;zip&quot;])&#xA;&#x9;.setCity(userData[&quot;city&quot;])&#xA;&#x9;.setAddress(userData[&quot;address&quot;])&#xA;&#x9;.setEmail(userData[&quot;email&quot;]);&#xA;&#xA;creator.setPersonalContactData(contactData)&#xA;creator.setProfessionalContactData(contactData);&#xA;&#xA;def newUser = identityApi.createUser(creator);&#xA;&#xA;def group = null;&#xA;&#xA;if (userData[&quot;isCompanyRepresentative&quot;]) {&#xA;&#x9;group = identityApi.getGroupByPath('/ServiceBidding/Suppliers');&#xA;} else {&#xA;&#x9;group = identityApi.getGroupByPath('/ServiceBidding/Customers');&#xA;}&#xA;&#xA;def role = identityApi.getRoleByName(&quot;member&quot;);&#xA;&#xA;def searchOptionsBuilder = new SearchOptionsBuilder(0, 10);&#xA;searchOptionsBuilder.filter(ProfileSearchDescriptor.NAME, &quot;User&quot;);&#xA;def searchResultProfile = profileApi.searchProfiles(searchOptionsBuilder.done())&#xA;def profile = searchResultProfile.getResult().getAt(0);&#xA;def profileMemberCreator = new ProfileMemberCreator(profile.getId());&#xA;profileMemberCreator.setUserId(newUser.getId());&#xA;&#xA;profileApi.createProfileMember(profileMemberCreator);&#xA;&#xA;def createdUser = [&#xA;&#x9;id: newUser.getId(),&#xA;&#x9;username: userData[&quot;username&quot;],&#xA;&#x9;password: userData[&quot;password&quot;],&#xA;&#x9;username: userData[&quot;username&quot;],&#xA;&#x9;firstName: userData[&quot;firstName&quot;],&#xA;&#x9;lastName: userData[&quot;lastName&quot;],&#xA;&#x9;isCompanyRepresentative: userData[&quot;isCompanyRepresentative&quot;],&#xA;&#x9;email: userData[&quot;email&quot;],&#xA;&#x9;country: userData[&quot;country&quot;],&#xA;&#x9;city: userData[&quot;city&quot;],&#xA;&#x9;zip: userData[&quot;zip&quot;],&#xA;&#x9;address: userData[&quot;address&quot;]&#xA;];&#xA;&#xA;logger.info(&quot;Registered user &quot; + newUser.getId() + &quot; | isCompanyRepresentative: &quot; + userData[&quot;isCompanyRepresentative&quot;]);&#xA;&#xA;identityApi.addUserMembership(&#xA;&#x9;newUser.id,&#xA;&#x9;group.id,&#xA;&#x9;role.id&#xA;);&#xA;&#xA;return createdUser;&#xA;&#xA;" interpreter="GROOVY" type="TYPE_READ_ONLY_SCRIPT" returnType="java.lang.Object" returnTypeFixed="true">
+                  <referencedElements xmi:type="process:JavaObjectData" xmi:id="_0ogEgKejEey5d6em7gu46w" name="userData" dataType="_NUAVImgqEeyiO4cwlqdIVg" className="java.util.Map"/>
+                  <referencedElements xmi:type="expression:Expression" xmi:id="_0ogEgaejEey5d6em7gu46w" name="apiAccessor" content="apiAccessor" type="TYPE_ENGINE_CONSTANT" returnType="org.bonitasoft.engine.api.APIAccessor"/>
                 </expression>
               </parameters>
             </configuration>
@@ -41,6 +41,75 @@
               </rightOperand>
               <operator xmi:type="expression:Operator" xmi:id="_IvKXZYdQEeydTIvG_uGnDw" type="ASSIGNMENT"/>
             </outputs>
+          </connectors>
+          <connectors xmi:type="process:Connector" xmi:id="_mszGAKegEey5d6em7gu46w" name="notifyUserAboutRegistration" definitionId="email" event="ON_FINISH" definitionVersion="1.2.0">
+            <configuration xmi:type="connectorconfiguration:ConnectorConfiguration" xmi:id="_mszGAaegEey5d6em7gu46w" definitionId="email" version="1.2.0" modelVersion="7.12.0-004">
+              <parameters xmi:type="connectorconfiguration:ConnectorParameter" xmi:id="_mszGAqegEey5d6em7gu46w" key="smtpHost">
+                <expression xmi:type="expression:Expression" xmi:id="_mszGA6egEey5d6em7gu46w" name="localhost" content="localhost" returnTypeFixed="true"/>
+              </parameters>
+              <parameters xmi:type="connectorconfiguration:ConnectorParameter" xmi:id="_mszGBKegEey5d6em7gu46w" key="smtpPort">
+                <expression xmi:type="expression:Expression" xmi:id="_mszGBaegEey5d6em7gu46w" name="1025" content="1025" returnType="java.lang.Integer" returnTypeFixed="true"/>
+              </parameters>
+              <parameters xmi:type="connectorconfiguration:ConnectorParameter" xmi:id="_mszGBqegEey5d6em7gu46w" key="sslSupport">
+                <expression xmi:type="expression:Expression" xmi:id="_mszGB6egEey5d6em7gu46w" name="false" content="false" returnType="java.lang.Boolean" returnTypeFixed="true"/>
+              </parameters>
+              <parameters xmi:type="connectorconfiguration:ConnectorParameter" xmi:id="_mszGCKegEey5d6em7gu46w" key="starttlsSupport">
+                <expression xmi:type="expression:Expression" xmi:id="_mszGCaegEey5d6em7gu46w" name="false" content="false" returnType="java.lang.Boolean" returnTypeFixed="true"/>
+              </parameters>
+              <parameters xmi:type="connectorconfiguration:ConnectorParameter" xmi:id="_mszGCqegEey5d6em7gu46w" key="trustCertificate">
+                <expression xmi:type="expression:Expression" xmi:id="_mszGC6egEey5d6em7gu46w" name="false" content="false" returnType="java.lang.Boolean" returnTypeFixed="true"/>
+              </parameters>
+              <parameters xmi:type="connectorconfiguration:ConnectorParameter" xmi:id="_mszGDKegEey5d6em7gu46w" key="userName">
+                <expression xmi:type="expression:Expression" xmi:id="_mszGDaegEey5d6em7gu46w" content="" returnTypeFixed="true"/>
+              </parameters>
+              <parameters xmi:type="connectorconfiguration:ConnectorParameter" xmi:id="_mszGDqegEey5d6em7gu46w" key="password">
+                <expression xmi:type="expression:Expression" xmi:id="_mszGD6egEey5d6em7gu46w" content="" returnTypeFixed="true"/>
+              </parameters>
+              <parameters xmi:type="connectorconfiguration:ConnectorParameter" xmi:id="_mszGEKegEey5d6em7gu46w" key="from">
+                <expression xmi:type="expression:Expression" xmi:id="_mszGEaegEey5d6em7gu46w" name="process@localhost" content="process@localhost" returnTypeFixed="true"/>
+              </parameters>
+              <parameters xmi:type="connectorconfiguration:ConnectorParameter" xmi:id="_mszGEqegEey5d6em7gu46w" key="returnPath">
+                <expression xmi:type="expression:Expression" xmi:id="_mszGE6egEey5d6em7gu46w" content="" returnTypeFixed="true"/>
+              </parameters>
+              <parameters xmi:type="connectorconfiguration:ConnectorParameter" xmi:id="_mszGFKegEey5d6em7gu46w" key="to">
+                <expression xmi:type="expression:Expression" xmi:id="_mszGFaegEey5d6em7gu46w" name="getCreatedUserEmail()" content="return userData.email;&#xA;" interpreter="GROOVY" type="TYPE_READ_ONLY_SCRIPT" returnTypeFixed="true">
+                  <referencedElements xmi:type="process:JavaObjectData" xmi:id="_5cKn0KejEey5d6em7gu46w" name="userData" dataType="_NUAVImgqEeyiO4cwlqdIVg" className="java.util.Map"/>
+                </expression>
+              </parameters>
+              <parameters xmi:type="connectorconfiguration:ConnectorParameter" xmi:id="_mszGFqegEey5d6em7gu46w" key="bcc">
+                <expression xmi:type="expression:Expression" xmi:id="_mszGF6egEey5d6em7gu46w" content="" returnTypeFixed="true"/>
+              </parameters>
+              <parameters xmi:type="connectorconfiguration:ConnectorParameter" xmi:id="_mszGGKegEey5d6em7gu46w" key="cc">
+                <expression xmi:type="expression:Expression" xmi:id="_mszGGaegEey5d6em7gu46w" content="" returnTypeFixed="true"/>
+              </parameters>
+              <parameters xmi:type="connectorconfiguration:ConnectorParameter" xmi:id="_mszGGqegEey5d6em7gu46w" key="subject">
+                <expression xmi:type="expression:Expression" xmi:id="_mszGG6egEey5d6em7gu46w" name="Service Bidding App - Welcome" content="Service Bidding App - Welcome" returnTypeFixed="true"/>
+              </parameters>
+              <parameters xmi:type="connectorconfiguration:ConnectorParameter" xmi:id="_mszGHKegEey5d6em7gu46w" key="html">
+                <expression xmi:type="expression:Expression" xmi:id="_mszGHaegEey5d6em7gu46w" name="true" content="true" returnType="java.lang.Boolean" returnTypeFixed="true"/>
+              </parameters>
+              <parameters xmi:type="connectorconfiguration:ConnectorParameter" xmi:id="_mszGHqegEey5d6em7gu46w" key="message">
+                <expression xmi:type="expression:Expression" xmi:id="_mszGH6egEey5d6em7gu46w" name="&lt;pattern-expression>" content="Hi, ${userData.firstName}&#xA;&#xA;Welcome to the service bidding app!" type="TYPE_PATTERN" returnTypeFixed="true">
+                  <referencedElements xmi:type="expression:Expression" xmi:id="_E9HigKekEey5d6em7gu46w" name="userData.firstName" content="userData.firstName" interpreter="GROOVY" type="TYPE_READ_ONLY_SCRIPT">
+                    <referencedElements xmi:type="expression:Expression" xmi:id="_E9HigaekEey5d6em7gu46w" name="userData" content="userData" type="TYPE_VARIABLE" returnType="java.util.Map">
+                      <referencedElements xmi:type="process:JavaObjectData" xmi:id="_E9HigqekEey5d6em7gu46w" name="userData" dataType="_NUAVImgqEeyiO4cwlqdIVg" className="java.util.Map"/>
+                    </referencedElements>
+                  </referencedElements>
+                </expression>
+              </parameters>
+              <parameters xmi:type="connectorconfiguration:ConnectorParameter" xmi:id="_mszGIKegEey5d6em7gu46w" key="headers">
+                <expression xmi:type="expression:TableExpression" xmi:id="_mszGIaegEey5d6em7gu46w"/>
+              </parameters>
+              <parameters xmi:type="connectorconfiguration:ConnectorParameter" xmi:id="_mszGIqegEey5d6em7gu46w" key="charset">
+                <expression xmi:type="expression:Expression" xmi:id="_mszGI6egEey5d6em7gu46w" name="UTF-8" content="UTF-8" returnTypeFixed="true"/>
+              </parameters>
+              <parameters xmi:type="connectorconfiguration:ConnectorParameter" xmi:id="_mszGJKegEey5d6em7gu46w" key="replyTo">
+                <expression xmi:type="expression:Expression" xmi:id="_mszGJaegEey5d6em7gu46w" content="" returnTypeFixed="true"/>
+              </parameters>
+              <parameters xmi:type="connectorconfiguration:ConnectorParameter" xmi:id="_mszGJqegEey5d6em7gu46w" key="attachments">
+                <expression xmi:type="expression:ListExpression" xmi:id="_mszGJ6egEey5d6em7gu46w"/>
+              </parameters>
+            </configuration>
           </connectors>
           <loopCondition xmi:type="expression:Expression" xmi:id="_NUAU-2gqEeyiO4cwlqdIVg" name="" content="" returnType="java.lang.Boolean" returnTypeFixed="true"/>
           <loopMaximum xmi:type="expression:Expression" xmi:id="_NUAU_GgqEeyiO4cwlqdIVg" name="" content="" returnType="java.lang.Integer" returnTypeFixed="true"/>
