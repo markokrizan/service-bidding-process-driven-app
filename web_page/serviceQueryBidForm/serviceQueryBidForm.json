@@ -2,7 +2,7 @@
   "modelVersion" : "2.2",
   "id" : "serviceQueryBidForm",
   "name" : "serviceQueryBidForm",
-  "lastUpdate" : 1645184106752,
+  "lastUpdate" : 1647725354568,
   "rows" : [
     [
       {
@@ -715,6 +715,46 @@
                           "type" : "constant",
                           "value" : false
                         },
+                        "disabled" : {
+                          "type" : "constant",
+                          "value" : false
+                        },
+                        "required" : {
+                          "type" : "constant",
+                          "value" : false
+                        },
+                        "label" : {
+                          "type" : "interpolation",
+                          "value" : "Place offer"
+                        },
+                        "value" : {
+                          "type" : "variable",
+                          "value" : "formInput.isBidding"
+                        }
+                      },
+                      "reference" : "ffc1fc7a-0989-4360-996f-98127b9dad4d",
+                      "hasValidationError" : false,
+                      "id" : "pbCheckbox"
+                    }
+                  ],
+                  [
+                    {
+                      "type" : "component",
+                      "dimension" : {
+                        "xs" : 12,
+                        "sm" : 12,
+                        "md" : 12,
+                        "lg" : 12
+                      },
+                      "propertyValues" : {
+                        "cssClasses" : {
+                          "type" : "constant",
+                          "value" : ""
+                        },
+                        "hidden" : {
+                          "type" : "expression",
+                          "value" : "!formInput.isBidding"
+                        },
                         "labelHidden" : {
                           "type" : "constant",
                           "value" : true
@@ -764,8 +804,8 @@
                           "value" : false
                         },
                         "hidden" : {
-                          "type" : "constant",
-                          "value" : false
+                          "type" : "expression",
+                          "value" : "!formInput.isBidding"
                         },
                         "labelPosition" : {
                           "type" : "constant",
@@ -805,6 +845,24 @@
                         "required" : {
                           "type" : "constant",
                           "value" : false
+                        },
+                        "minLength" : {
+                          "type" : "constant",
+                          "value" : ""
+                        },
+                        "maxLength" : {
+                          "type" : "constant",
+                          "value" : ""
+                        },
+                        "min" : {
+                          "type" : "constant"
+                        },
+                        "max" : {
+                          "type" : "constant"
+                        },
+                        "step" : {
+                          "type" : "constant",
+                          "value" : 1
                         }
                       },
                       "reference" : "35deaf38-fa80-47e4-8bfb-e3248060c5db",
@@ -824,8 +882,8 @@
                       },
                       "propertyValues" : {
                         "hidden" : {
-                          "type" : "constant",
-                          "value" : false
+                          "type" : "expression",
+                          "value" : "!formInput.isBidding"
                         },
                         "dateFormat" : {
                           "type" : "constant",
@@ -1013,6 +1071,14 @@
                   "dimension" : {
                     "type" : "constant",
                     "value" : 12
+                  },
+                  "labelPosition" : {
+                    "type" : "constant",
+                    "value" : "top"
+                  },
+                  "labelWidth" : {
+                    "type" : "constant",
+                    "value" : 4
                   }
                 },
                 "reference" : "84b9470a-e1ea-439d-a84f-2531d4353059",
@@ -1079,10 +1145,11 @@
         "return {",
         "\tserviceQueryBidInput: {",
         "\t\tserviceQuery: {",
-        "\t\t\tpersistenceId_string: $data.context && $data.context.serviceQuery_ref && $data.context.serviceQuery_ref.storageId_string",
+        "\t\t\tpersistenceId_string: $data.context && $data.context.serviceQuery_ref && $data.context.serviceQuery_ref.storageId_string || null",
         "\t\t},",
-        "\t\tprice: $data.serviceQueryBid.price !== undefined ? $data.serviceQueryBid.price : null,",
-        "\t\tjobDeadline: $data.serviceQueryBid.jobDeadline !== undefined ? $data.serviceQueryBid.jobDeadline : null",
+        "\t\tprice: $data.serviceQueryBid && $data.serviceQueryBid.price || null,",
+        "\t\tjobDeadline: $data.serviceQueryBid && $data.serviceQueryBid.jobDeadline || null,",
+        "\t\tisBidding: $data.formInput.isBidding",
         "\t}",
         "}"
       ],
@@ -1144,6 +1211,15 @@
         "../API/bdm/businessData/rs.ac.uns.ftn.model.ServiceQuery/{{currentServiceQueryId}}"
       ],
       "advancedOptions" : { },
+      "exposed" : false
+    },
+    "formInput" : {
+      "type" : "json",
+      "value" : [
+        "{",
+        "    \"isBidding\": false",
+        "}"
+      ],
       "exposed" : false
     }
   },
