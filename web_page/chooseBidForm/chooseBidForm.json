@@ -2,7 +2,7 @@
   "modelVersion" : "2.2",
   "id" : "chooseBidForm",
   "name" : "chooseBidForm",
-  "lastUpdate" : 1647731672416,
+  "lastUpdate" : 1647779924884,
   "rows" : [
     [
       {
@@ -219,7 +219,7 @@
           },
           "value" : {
             "type" : "variable",
-            "value" : "formInput.chosenBid"
+            "value" : "formInput.chosenBidInput"
           }
         },
         "reference" : "5e84b643-8a0d-4579-aa0e-d175bff4ebbc",
@@ -425,7 +425,7 @@
       "type" : "expression",
       "value" : [
         "return {",
-        "    chosenBid: $data.formInput.chosenBid",
+        "    chosenBidInput: $data.formInput.chosenBidInput",
         "}"
       ],
       "exposed" : false
@@ -489,7 +489,7 @@
     "formInput" : {
       "type" : "json",
       "value" : [
-        "{ \"chosenBid\": null }"
+        "{ \"chosenBidInput\": null }"
       ],
       "exposed" : false
     }

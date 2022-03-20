@@ -43,10 +43,10 @@
             <leftOperand xmi:type="expression:Expression" xmi:id="_UlJxkZCeEey8HaMXJcKoug" name="serviceQuery" content="serviceQuery" type="TYPE_VARIABLE" returnType="rs.ac.uns.ftn.model.ServiceQuery">
               <referencedElements xmi:type="process:BusinessObjectData" xmi:id="_Umk4cJCfEey8HaMXJcKoug" name="serviceQuery" dataType="_XITTE45xEeyw3fSZnDuAFg" className="rs.ac.uns.ftn.model.ServiceQuery"/>
             </leftOperand>
-            <rightOperand xmi:type="expression:Expression" xmi:id="_UlJxkpCeEey8HaMXJcKoug" name="setBids()" content="def bids = serviceQuery.getBids();&#xA;&#xA;if (!chosenBid) {&#xA;&#x9;return bids;&#xA;}&#xA;&#xA;for (bid in bids) {&#xA;&#x9;if (bid.getPersistenceId() == Long.parseLong(chosenBid)) {&#xA;&#x9;&#x9;bid.setIsChosen(true);&#xA;&#x9;}&#xA;}&#xA;return bids;&#xA;" interpreter="GROOVY" type="TYPE_READ_ONLY_SCRIPT" returnType="java.util.List">
-              <referencedElements xmi:type="process:BusinessObjectData" xmi:id="_ppmB8KfaEeyRp_auqFo6LA" name="serviceQuery" dataType="_XITTE45xEeyw3fSZnDuAFg" className="rs.ac.uns.ftn.model.ServiceQuery"/>
-              <referencedElements xmi:type="process:ContractInput" xmi:id="_ppmB8afaEeyRp_auqFo6LA" name="chosenBid">
-                <mapping xmi:type="process:ContractInputMapping" xmi:id="_ppmpAKfaEeyRp_auqFo6LA"/>
+            <rightOperand xmi:type="expression:Expression" xmi:id="_UlJxkpCeEey8HaMXJcKoug" name="setBids()" content="def bids = serviceQuery.getBids();&#xA;&#xA;if (!chosenBidInput) {&#xA;&#x9;return bids;&#xA;}&#xA;&#xA;for (bid in bids) {&#xA;&#x9;if (bid.getPersistenceId() == Long.parseLong(chosenBidInput)) {&#xA;&#x9;&#x9;bid.setIsChosen(true);&#xA;&#x9;}&#xA;}&#xA;&#xA;return bids;&#xA;" interpreter="GROOVY" type="TYPE_READ_ONLY_SCRIPT" returnType="java.util.List">
+              <referencedElements xmi:type="process:BusinessObjectData" xmi:id="_T_gfMKhKEeyqDPCZuw5VZg" name="serviceQuery" dataType="_XITTE45xEeyw3fSZnDuAFg" className="rs.ac.uns.ftn.model.ServiceQuery"/>
+              <referencedElements xmi:type="process:ContractInput" xmi:id="_T_gfMahKEeyqDPCZuw5VZg" name="chosenBidInput">
+                <mapping xmi:type="process:ContractInputMapping" xmi:id="_T_hGQKhKEeyqDPCZuw5VZg"/>
               </referencedElements>
             </rightOperand>
             <operator xmi:type="expression:Operator" xmi:id="_UlJxk5CeEey8HaMXJcKoug" type="JAVA_METHOD" expression="setBids">
@@ -57,8 +57,8 @@
             <leftOperand xmi:type="expression:Expression" xmi:id="_yvBVYafaEeyRp_auqFo6LA" name="chosenBid" content="chosenBid" type="TYPE_VARIABLE" returnType="java.lang.Long">
               <referencedElements xmi:type="process:Data" xmi:id="_zURXgKfaEeyRp_auqFo6LA" name="chosenBid" dataType="_XITTDo5xEeyw3fSZnDuAFg"/>
             </leftOperand>
-            <rightOperand xmi:type="expression:Expression" xmi:id="_yvBVYqfaEeyRp_auqFo6LA" name="getChosenBidFromForm()" content="try {&#xA;&#x9;return Long.parseLong(chosenBid);&#xA;} catch (Exception e) {&#xA;&#x9;return null&#xA;}&#xA;&#xA;&#xA;" interpreter="GROOVY" type="TYPE_READ_ONLY_SCRIPT" returnType="java.lang.Long">
-              <referencedElements xmi:type="process:ContractInput" xmi:id="_e9Fk4Kg7EeyRp_auqFo6LA" name="chosenBid">
+            <rightOperand xmi:type="expression:Expression" xmi:id="_yvBVYqfaEeyRp_auqFo6LA" name="getChosenBidFromForm()" content="try {&#xA;&#x9;return Long.parseLong(chosenBidInput);&#xA;} catch (Exception e) {&#xA;&#x9;return null&#xA;}&#xA;&#xA;&#xA;" interpreter="GROOVY" type="TYPE_READ_ONLY_SCRIPT" returnType="java.lang.Long">
+              <referencedElements xmi:type="process:ContractInput" xmi:id="_e9Fk4Kg7EeyRp_auqFo6LA" name="chosenBidInput">
                 <mapping xmi:type="process:ContractInputMapping" xmi:id="_e9Fk4ag7EeyRp_auqFo6LA"/>
               </referencedElements>
             </rightOperand>
@@ -80,7 +80,7 @@
             </configuration>
           </filters>
           <contract xmi:type="process:Contract" xmi:id="_LS6cG5CcEey8HaMXJcKoug">
-            <inputs xmi:type="process:ContractInput" xmi:id="_mbkuoJCgEey8HaMXJcKoug" name="chosenBid">
+            <inputs xmi:type="process:ContractInput" xmi:id="_mbkuoJCgEey8HaMXJcKoug" name="chosenBidInput">
               <mapping xmi:type="process:ContractInputMapping" xmi:id="_mbkuoZCgEey8HaMXJcKoug"/>
             </inputs>
           </contract>
@@ -1010,7 +1010,7 @@
         <layoutConstraint xmi:type="notation:Location" xmi:id="_1e1qQafdEeyRp_auqFo6LA" y="-10"/>
       </children>
       <styles xmi:type="notation:FontStyle" xmi:id="_1e1DMafdEeyRp_auqFo6LA" fontName="Ubuntu"/>
-      <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_1e1DMqfdEeyRp_auqFo6LA" points="[0, 0, -223, 198]$[217, -196, -6, 2]"/>
+      <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_1e1DMqfdEeyRp_auqFo6LA" points="[0, 0, -223, 198]$[108, 0, -115, 198]$[108, -192, -115, 6]$[219, -192, -4, 6]"/>
       <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_1e4tkKfdEeyRp_auqFo6LA" id="(1.0,0.49206349206349204)"/>
       <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_1e4tkafdEeyRp_auqFo6LA" id="(0.23333333333333334,0.6)"/>
     </edges>
