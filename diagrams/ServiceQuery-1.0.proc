@@ -291,6 +291,77 @@
           <dynamicLabel xmi:type="expression:Expression" xmi:id="_SEi74afdEeyRp_auqFo6LA" name="" content="" returnTypeFixed="true"/>
           <dynamicDescription xmi:type="expression:Expression" xmi:id="_SEi74KfdEeyRp_auqFo6LA" name="" content="" returnTypeFixed="true"/>
           <stepSummary xmi:type="expression:Expression" xmi:id="_SEi74qfdEeyRp_auqFo6LA" name="" content="" returnTypeFixed="true"/>
+          <connectors xmi:type="process:Connector" xmi:id="_2hiJ0Kg_EeyUmY09x5ok6w" name="notifyServiceProviderAboutChosenBid" definitionId="email" event="ON_ENTER" ignoreErrors="true" definitionVersion="1.2.0">
+            <configuration xmi:type="connectorconfiguration:ConnectorConfiguration" xmi:id="_2hiJ0ag_EeyUmY09x5ok6w" definitionId="email" version="1.2.0" modelVersion="7.12.0-004">
+              <parameters xmi:type="connectorconfiguration:ConnectorParameter" xmi:id="_2hiJ0qg_EeyUmY09x5ok6w" key="smtpHost">
+                <expression xmi:type="expression:Expression" xmi:id="_2hiJ06g_EeyUmY09x5ok6w" name="localhost" content="localhost" returnTypeFixed="true"/>
+              </parameters>
+              <parameters xmi:type="connectorconfiguration:ConnectorParameter" xmi:id="_2hiJ1Kg_EeyUmY09x5ok6w" key="smtpPort">
+                <expression xmi:type="expression:Expression" xmi:id="_2hiJ1ag_EeyUmY09x5ok6w" name="1025" content="1025" returnType="java.lang.Integer" returnTypeFixed="true"/>
+              </parameters>
+              <parameters xmi:type="connectorconfiguration:ConnectorParameter" xmi:id="_2hiJ1qg_EeyUmY09x5ok6w" key="sslSupport">
+                <expression xmi:type="expression:Expression" xmi:id="_2hiJ16g_EeyUmY09x5ok6w" name="false" content="false" returnType="java.lang.Boolean" returnTypeFixed="true"/>
+              </parameters>
+              <parameters xmi:type="connectorconfiguration:ConnectorParameter" xmi:id="_2hiJ2Kg_EeyUmY09x5ok6w" key="starttlsSupport">
+                <expression xmi:type="expression:Expression" xmi:id="_2hiJ2ag_EeyUmY09x5ok6w" name="false" content="false" returnType="java.lang.Boolean" returnTypeFixed="true"/>
+              </parameters>
+              <parameters xmi:type="connectorconfiguration:ConnectorParameter" xmi:id="_2hiJ2qg_EeyUmY09x5ok6w" key="trustCertificate">
+                <expression xmi:type="expression:Expression" xmi:id="_2hiJ26g_EeyUmY09x5ok6w" name="false" content="false" returnType="java.lang.Boolean" returnTypeFixed="true"/>
+              </parameters>
+              <parameters xmi:type="connectorconfiguration:ConnectorParameter" xmi:id="_2hiJ3Kg_EeyUmY09x5ok6w" key="userName">
+                <expression xmi:type="expression:Expression" xmi:id="_2hiJ3ag_EeyUmY09x5ok6w" content="" returnTypeFixed="true"/>
+              </parameters>
+              <parameters xmi:type="connectorconfiguration:ConnectorParameter" xmi:id="_2hiJ3qg_EeyUmY09x5ok6w" key="password">
+                <expression xmi:type="expression:Expression" xmi:id="_2hiJ36g_EeyUmY09x5ok6w" content="" returnTypeFixed="true"/>
+              </parameters>
+              <parameters xmi:type="connectorconfiguration:ConnectorParameter" xmi:id="_2hiJ4Kg_EeyUmY09x5ok6w" key="from">
+                <expression xmi:type="expression:Expression" xmi:id="_2hiJ4ag_EeyUmY09x5ok6w" name="process@localhost" content="process@localhost" returnTypeFixed="true"/>
+              </parameters>
+              <parameters xmi:type="connectorconfiguration:ConnectorParameter" xmi:id="_2hiJ4qg_EeyUmY09x5ok6w" key="returnPath">
+                <expression xmi:type="expression:Expression" xmi:id="_2hiJ46g_EeyUmY09x5ok6w" content="" returnTypeFixed="true"/>
+              </parameters>
+              <parameters xmi:type="connectorconfiguration:ConnectorParameter" xmi:id="_2hiJ5Kg_EeyUmY09x5ok6w" key="to">
+                <expression xmi:type="expression:Expression" xmi:id="_2hiJ5ag_EeyUmY09x5ok6w" name="to()" content="def chosenBid = serviceQueryBidDAO.findByPersistenceId(chosenBid);&#xA;&#xA;def professionalEmail = apiAccessor.getIdentityAPI().getUserContactData(chosenBid.getUserId(), false).getEmail();&#xA;def personalEmail = apiAccessor.getIdentityAPI().getUserContactData(chosenBid.getUserId(), true).getEmail();&#xA;&#xA;if (professionalEmail != null) {&#xA;&#x9;return professionalEmail;&#xA;} else if (personalEmail != null) {&#xA;&#x9;return personalEmail;&#xA;} else {&#xA;&#x9;return 'user@localhost';&#xA;}&#xA;&#xA;" interpreter="GROOVY" type="TYPE_READ_ONLY_SCRIPT" returnTypeFixed="true">
+                  <referencedElements xmi:type="expression:Expression" xmi:id="_-SeWkKg_EeyUmY09x5ok6w" name="serviceQueryBidDAO" content="serviceQueryBidDAO" type="TYPE_BUSINESS_OBJECT_DAO" returnType="rs.ac.uns.ftn.model.ServiceQueryBidDAO" returnTypeFixed="true"/>
+                  <referencedElements xmi:type="process:Data" xmi:id="_-Se9oKg_EeyUmY09x5ok6w" name="chosenBid" dataType="_XITTDo5xEeyw3fSZnDuAFg"/>
+                  <referencedElements xmi:type="expression:Expression" xmi:id="_-SfksKg_EeyUmY09x5ok6w" name="apiAccessor" content="apiAccessor" type="TYPE_ENGINE_CONSTANT" returnType="org.bonitasoft.engine.api.APIAccessor"/>
+                </expression>
+              </parameters>
+              <parameters xmi:type="connectorconfiguration:ConnectorParameter" xmi:id="_2hiJ6Kg_EeyUmY09x5ok6w" key="bcc">
+                <expression xmi:type="expression:Expression" xmi:id="_2hiJ6ag_EeyUmY09x5ok6w" content="" returnTypeFixed="true"/>
+              </parameters>
+              <parameters xmi:type="connectorconfiguration:ConnectorParameter" xmi:id="_2hiJ6qg_EeyUmY09x5ok6w" key="cc">
+                <expression xmi:type="expression:Expression" xmi:id="_2hiJ66g_EeyUmY09x5ok6w" content="" returnTypeFixed="true"/>
+              </parameters>
+              <parameters xmi:type="connectorconfiguration:ConnectorParameter" xmi:id="_2hiJ7Kg_EeyUmY09x5ok6w" key="subject">
+                <expression xmi:type="expression:Expression" xmi:id="_2hiJ7ag_EeyUmY09x5ok6w" name="Your offer has been chosen" content="Your offer has been chosen" returnTypeFixed="true"/>
+              </parameters>
+              <parameters xmi:type="connectorconfiguration:ConnectorParameter" xmi:id="_2hiJ7qg_EeyUmY09x5ok6w" key="html">
+                <expression xmi:type="expression:Expression" xmi:id="_2hiJ76g_EeyUmY09x5ok6w" name="true" content="true" returnType="java.lang.Boolean" returnTypeFixed="true"/>
+              </parameters>
+              <parameters xmi:type="connectorconfiguration:ConnectorParameter" xmi:id="_2hiJ8Kg_EeyUmY09x5ok6w" key="message">
+                <expression xmi:type="expression:Expression" xmi:id="_2hiJ8ag_EeyUmY09x5ok6w" name="&lt;pattern-expression>" content="Hi your offer for ${serviceQuery.getJobDescription()}  has been chosen." type="TYPE_PATTERN" returnTypeFixed="true">
+                  <referencedElements xmi:type="expression:Expression" xmi:id="_PppdwKhAEeyUmY09x5ok6w" name="serviceQuery.getJobDescription()" content="serviceQuery.getJobDescription()" interpreter="GROOVY" type="TYPE_READ_ONLY_SCRIPT">
+                    <referencedElements xmi:type="expression:Expression" xmi:id="_PppdwahAEeyUmY09x5ok6w" name="serviceQuery" content="serviceQuery" type="TYPE_VARIABLE" returnType="rs.ac.uns.ftn.model.ServiceQuery">
+                      <referencedElements xmi:type="process:BusinessObjectData" xmi:id="_PppdwqhAEeyUmY09x5ok6w" name="serviceQuery" dataType="_XITTE45xEeyw3fSZnDuAFg" className="rs.ac.uns.ftn.model.ServiceQuery"/>
+                    </referencedElements>
+                  </referencedElements>
+                </expression>
+              </parameters>
+              <parameters xmi:type="connectorconfiguration:ConnectorParameter" xmi:id="_2hiw46g_EeyUmY09x5ok6w" key="headers">
+                <expression xmi:type="expression:TableExpression" xmi:id="_2hiw5Kg_EeyUmY09x5ok6w"/>
+              </parameters>
+              <parameters xmi:type="connectorconfiguration:ConnectorParameter" xmi:id="_2hiw5ag_EeyUmY09x5ok6w" key="charset">
+                <expression xmi:type="expression:Expression" xmi:id="_2hiw5qg_EeyUmY09x5ok6w" name="UTF-8" content="UTF-8" returnTypeFixed="true"/>
+              </parameters>
+              <parameters xmi:type="connectorconfiguration:ConnectorParameter" xmi:id="_2hiw56g_EeyUmY09x5ok6w" key="replyTo">
+                <expression xmi:type="expression:Expression" xmi:id="_2hiw6Kg_EeyUmY09x5ok6w" content="" returnTypeFixed="true"/>
+              </parameters>
+              <parameters xmi:type="connectorconfiguration:ConnectorParameter" xmi:id="_2hiw6ag_EeyUmY09x5ok6w" key="attachments">
+                <expression xmi:type="expression:ListExpression" xmi:id="_2hiw6qg_EeyUmY09x5ok6w"/>
+              </parameters>
+            </configuration>
+          </connectors>
           <loopCondition xmi:type="expression:Expression" xmi:id="_SEi746fdEeyRp_auqFo6LA" name="" content="" returnType="java.lang.Boolean" returnTypeFixed="true"/>
           <loopMaximum xmi:type="expression:Expression" xmi:id="_SEi75KfdEeyRp_auqFo6LA" name="" content="" returnType="java.lang.Integer" returnTypeFixed="true"/>
           <cardinalityExpression xmi:type="expression:Expression" xmi:id="_SEi75afdEeyRp_auqFo6LA" name="" content="" returnType="java.lang.Integer" returnTypeFixed="true"/>
@@ -383,10 +454,11 @@
             <leftOperand xmi:type="expression:Expression" xmi:id="_NQrU4Y_OEeyH8rHZUukz9A" name="serviceQuery" content="serviceQuery" type="TYPE_VARIABLE" returnType="rs.ac.uns.ftn.model.ServiceQuery">
               <referencedElements xmi:type="process:BusinessObjectData" xmi:id="_ODhHEI_OEeyH8rHZUukz9A" name="serviceQuery" dataType="_XITTE45xEeyw3fSZnDuAFg" className="rs.ac.uns.ftn.model.ServiceQuery"/>
             </leftOperand>
-            <rightOperand xmi:type="expression:Expression" xmi:id="_NQrU4o_OEeyH8rHZUukz9A" name="createNewBid()" content="if (!serviceQueryBidInput.isBidding) {&#xA;&#x9;return null;&#xA;}&#xA;&#xA;def newBid = serviceQueryBidDAO.newInstance(&#xA;&#x9;serviceQuery, &#xA;&#x9;serviceQueryBidInput.price, &#xA;&#x9;serviceQueryBidInput.jobDeadline&#xA;);&#xA;&#xA;return newBid;&#xA;" interpreter="GROOVY" type="TYPE_READ_ONLY_SCRIPT" returnType="rs.ac.uns.ftn.model.ServiceQueryBid">
-              <referencedElements xmi:type="process:ContractInput" xmi:id="_1C2XAKfLEey5d6em7gu46w" name="serviceQueryBidInput" type="COMPLEX" createMode="false"/>
-              <referencedElements xmi:type="expression:Expression" xmi:id="_1C2XAafLEey5d6em7gu46w" name="serviceQueryBidDAO" content="serviceQueryBidDAO" type="TYPE_BUSINESS_OBJECT_DAO" returnType="rs.ac.uns.ftn.model.ServiceQueryBidDAO" returnTypeFixed="true"/>
-              <referencedElements xmi:type="process:BusinessObjectData" xmi:id="_1C2XAqfLEey5d6em7gu46w" name="serviceQuery" dataType="_XITTE45xEeyw3fSZnDuAFg" className="rs.ac.uns.ftn.model.ServiceQuery"/>
+            <rightOperand xmi:type="expression:Expression" xmi:id="_NQrU4o_OEeyH8rHZUukz9A" name="createNewBid()" content="if (!serviceQueryBidInput.isBidding) {&#xA;&#x9;return null;&#xA;}&#xA;&#xA;def newBid = serviceQueryBidDAO.newInstance(&#xA;&#x9;serviceQuery,&#xA;&#x9;serviceQueryBidInput.price,&#xA;&#x9;serviceQueryBidInput.jobDeadline,&#xA;&#x9;bidder&#xA;);&#xA;&#xA;return newBid;&#xA;" interpreter="GROOVY" type="TYPE_READ_ONLY_SCRIPT" returnType="rs.ac.uns.ftn.model.ServiceQueryBid">
+              <referencedElements xmi:type="process:ContractInput" xmi:id="_ZwCUYKg_EeyUmY09x5ok6w" name="serviceQueryBidInput" type="COMPLEX" createMode="false"/>
+              <referencedElements xmi:type="expression:Expression" xmi:id="_ZwC7cKg_EeyUmY09x5ok6w" name="serviceQueryBidDAO" content="serviceQueryBidDAO" type="TYPE_BUSINESS_OBJECT_DAO" returnType="rs.ac.uns.ftn.model.ServiceQueryBidDAO" returnTypeFixed="true"/>
+              <referencedElements xmi:type="process:BusinessObjectData" xmi:id="_ZwC7cag_EeyUmY09x5ok6w" name="serviceQuery" dataType="_XITTE45xEeyw3fSZnDuAFg" className="rs.ac.uns.ftn.model.ServiceQuery"/>
+              <referencedElements xmi:type="process:Data" xmi:id="_ZwC7cqg_EeyUmY09x5ok6w" name="bidder" dataType="_XITTDo5xEeyw3fSZnDuAFg"/>
             </rightOperand>
             <operator xmi:type="expression:Operator" xmi:id="_NQrU44_OEeyH8rHZUukz9A" type="JAVA_METHOD" expression="addToBids">
               <inputTypes>rs.ac.uns.ftn.model.ServiceQueryBid</inputTypes>
