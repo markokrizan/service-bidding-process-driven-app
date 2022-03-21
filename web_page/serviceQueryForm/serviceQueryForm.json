@@ -2,7 +2,7 @@
   "modelVersion" : "2.2",
   "id" : "serviceQueryForm",
   "name" : "serviceQueryForm",
-  "lastUpdate" : 1647781453503,
+  "lastUpdate" : 1647815282367,
   "rows" : [
     [
       {
@@ -533,6 +533,24 @@
                         "required" : {
                           "type" : "constant",
                           "value" : true
+                        },
+                        "minLength" : {
+                          "type" : "constant",
+                          "value" : ""
+                        },
+                        "maxLength" : {
+                          "type" : "constant",
+                          "value" : ""
+                        },
+                        "min" : {
+                          "type" : "constant"
+                        },
+                        "max" : {
+                          "type" : "constant"
+                        },
+                        "step" : {
+                          "type" : "constant",
+                          "value" : 1
                         }
                       },
                       "reference" : "b0725ffe-45c8-459d-af5a-ab7e1c316f7a",
@@ -551,70 +569,86 @@
                         "lg" : 12
                       },
                       "propertyValues" : {
-                        "hidden" : {
-                          "type" : "constant",
-                          "value" : false
-                        },
-                        "dateFormat" : {
-                          "type" : "constant",
-                          "value" : "MM/dd/yyyy"
-                        },
                         "cssClasses" : {
                           "type" : "constant",
                           "value" : ""
                         },
-                        "labelWidth" : {
+                        "hidden" : {
                           "type" : "constant",
-                          "value" : 1
+                          "value" : false
                         },
                         "readOnly" : {
                           "type" : "constant",
                           "value" : false
                         },
-                        "label" : {
-                          "type" : "interpolation",
-                          "value" : "Offer Valid Until"
-                        },
-                        "type" : {
-                          "type" : "constant"
-                        },
                         "required" : {
                           "type" : "constant",
                           "value" : true
-                        },
-                        "todayLabel" : {
-                          "type" : "constant",
-                          "value" : "Today"
                         },
                         "labelHidden" : {
                           "type" : "constant",
                           "value" : false
                         },
-                        "showToday" : {
+                        "inlineInput" : {
                           "type" : "constant",
                           "value" : true
+                        },
+                        "label" : {
+                          "type" : "interpolation",
+                          "value" : "Offer Valid Until"
                         },
                         "labelPosition" : {
                           "type" : "constant",
                           "value" : "top"
                         },
-                        "placeholder" : {
+                        "labelWidth" : {
                           "type" : "constant",
-                          "value" : "Enter a date (mm/dd/yyyy)"
+                          "value" : 1
                         },
-                        "dimension" : {
+                        "withTimeZone" : {
                           "type" : "constant",
-                          "value" : 12
+                          "value" : true
                         },
                         "value" : {
                           "type" : "variable",
                           "value" : "formInput.serviceQueryInput.offerValidUntil"
+                        },
+                        "dateFormat" : {
+                          "type" : "constant",
+                          "value" : "MM/dd/yyyy"
+                        },
+                        "placeholder" : {
+                          "type" : "interpolation",
+                          "value" : "Enter a date (mm/dd/yyyy)"
+                        },
+                        "timeFormat" : {
+                          "type" : "constant",
+                          "value" : "h:mm:ss a"
+                        },
+                        "timePlaceholder" : {
+                          "type" : "interpolation",
+                          "value" : "Enter a time (h:mm:ss a)"
+                        },
+                        "showToday" : {
+                          "type" : "constant",
+                          "value" : true
+                        },
+                        "todayLabel" : {
+                          "type" : "interpolation",
+                          "value" : "Today"
+                        },
+                        "showNow" : {
+                          "type" : "constant",
+                          "value" : true
+                        },
+                        "nowLabel" : {
+                          "type" : "interpolation",
+                          "value" : "Now"
                         }
                       },
-                      "reference" : "a9f7693a-5195-4883-97f5-5a8c63d4da51",
+                      "reference" : "2eafb25b-1145-4932-8b19-c003fea70f0a",
                       "hasValidationError" : false,
-                      "id" : "pbDatePicker",
-                      "description" : ""
+                      "id" : "pbDateTimePicker"
                     }
                   ],
                   [

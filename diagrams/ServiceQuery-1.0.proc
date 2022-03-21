@@ -701,7 +701,7 @@
           </inputs>
           <inputs xmi:type="process:ContractInput" xmi:id="_JmVMc5JzEeyVFJLS2ffyVg" name="jobDescription"/>
           <inputs xmi:type="process:ContractInput" xmi:id="_JmVMdJJzEeyVFJLS2ffyVg" name="maxPossiblePayout" type="DECIMAL"/>
-          <inputs xmi:type="process:ContractInput" xmi:id="_JmVMdZJzEeyVFJLS2ffyVg" name="offerValidUntil" type="LOCALDATE"/>
+          <inputs xmi:type="process:ContractInput" xmi:id="_JmVMdZJzEeyVFJLS2ffyVg" name="offerValidUntil" type="LOCALDATETIME"/>
           <inputs xmi:type="process:ContractInput" xmi:id="_JmVMdpJzEeyVFJLS2ffyVg" name="jobDeadline" type="LOCALDATE"/>
           <inputs xmi:type="process:ContractInput" xmi:id="_JmVMd5JzEeyVFJLS2ffyVg" name="maxOffers" type="INTEGER"/>
           <inputs xmi:type="process:ContractInput" xmi:id="_JmVMeJJzEeyVFJLS2ffyVg" name="bids" type="COMPLEX" multiple="true">
