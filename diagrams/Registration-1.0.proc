@@ -42,7 +42,7 @@
               <operator xmi:type="expression:Operator" xmi:id="_IvKXZYdQEeydTIvG_uGnDw" type="ASSIGNMENT"/>
             </outputs>
           </connectors>
-          <connectors xmi:type="process:Connector" xmi:id="_mszGAKegEey5d6em7gu46w" name="notifyUserAboutRegistration" definitionId="email" event="ON_FINISH" definitionVersion="1.2.0">
+          <connectors xmi:type="process:Connector" xmi:id="_mszGAKegEey5d6em7gu46w" name="notifyUserAboutRegistration" definitionId="email" event="ON_FINISH" ignoreErrors="true" definitionVersion="1.2.0">
             <configuration xmi:type="connectorconfiguration:ConnectorConfiguration" xmi:id="_mszGAaegEey5d6em7gu46w" definitionId="email" version="1.2.0" modelVersion="7.12.0-004">
               <parameters xmi:type="connectorconfiguration:ConnectorParameter" xmi:id="_mszGAqegEey5d6em7gu46w" key="smtpHost">
                 <expression xmi:type="expression:Expression" xmi:id="_mszGA6egEey5d6em7gu46w" name="localhost" content="localhost" returnTypeFixed="true"/>

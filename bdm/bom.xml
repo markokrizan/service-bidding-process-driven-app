@@ -18,6 +18,16 @@
             <queries/>
             <indexes/>
         </businessObject>
+        <businessObject qualifiedName="rs.ac.uns.ftn.model.ServiceProviderRating">
+            <fields>
+                <field type="LONG" length="255" name="serviceProviderId" nullable="true" collection="false"/>
+                <field type="INTEGER" length="255" name="rating" nullable="true" collection="false"/>
+                <field type="LONG" length="255" name="ratedById" nullable="true" collection="false"/>
+            </fields>
+            <uniqueConstraints/>
+            <queries/>
+            <indexes/>
+        </businessObject>
         <businessObject qualifiedName="rs.ac.uns.ftn.model.ServiceQuery">
             <fields>
                 <relationField type="AGGREGATION" reference="rs.ac.uns.ftn.model.ServiceCategory" fetchType="EAGER" name="serviceCategory" nullable="true" collection="true"/>
